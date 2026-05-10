@@ -143,6 +143,15 @@ signupForm.addEventListener("submit", async(e) => {
             .replace(/\s+/g, "_")
             .toLowerCase();
 
+<<<<<<< HEAD
+=======
+        let docId = `${firstName}_${lastName}`.trim().replace(/\s+/g, "_").toLowerCase();
+
+        if (!firstName || !lastName) {
+        docId = user.uid;
+        }
+
+>>>>>>> 1bd88cbd491efb40e0b48281e2dedaaeada2e52a
         await setDoc(doc(db, "student", docId), {
             uid: user.uid,
 
