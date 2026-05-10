@@ -11,15 +11,13 @@ import {
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-// FORM
 const signupForm = document.getElementById("signupForm");
 
-// SUBMIT EVENT
 signupForm.addEventListener("submit", async(e) => {
     e.preventDefault();
 
     // =========================
-    // STEP 1 - PERSONAL INFO
+    // PERSONAL INFO
     // =========================
     const firstName = document.getElementById("firstName").value.trim();
     const middleName = document.getElementById("middleName").value.trim();
@@ -33,7 +31,7 @@ signupForm.addEventListener("submit", async(e) => {
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     // =========================
-    // STEP 2 - SCHOOL DETAILS
+    // SCHOOL DETAILS
     // =========================
     const school = document.getElementById("school").value.trim();
     const campus = document.getElementById("campus").value.trim();
@@ -51,10 +49,9 @@ signupForm.addEventListener("submit", async(e) => {
     const adviserContact = document.getElementById("adviserContact").value.trim();
 
     // =========================
-    // STEP 4 - DEPARTMENT
+    // DEPARTMENT
     // =========================
     let selectedDepartment = "";
-
     const selectedCard = document.querySelector(".dept-card.selected");
 
     if (selectedCard) {
@@ -68,7 +65,6 @@ signupForm.addEventListener("submit", async(e) => {
     // =========================
     // VALIDATION
     // =========================
-
     if (!firstName ||
         !lastName ||
         !birthDate ||
@@ -93,45 +89,36 @@ signupForm.addEventListener("submit", async(e) => {
         return;
     }
 
-    // EMAIL VALIDATION
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
+        alert("Invalid email.");
         return;
     }
 
-    // PASSWORD MATCH
     if (password !== confirmPassword) {
         alert("Passwords do not match.");
         return;
     }
 
-    // PASSWORD LENGTH
     if (password.length < 8) {
         alert("Password must be at least 8 characters.");
         return;
     }
 
-    // CONTACT NUMBER VALIDATION
     const phoneRegex = /^09\d{9}$/;
-
     if (!phoneRegex.test(contactNumber)) {
-        alert("Please enter a valid Philippine mobile number.");
+        alert("Invalid phone number.");
         return;
     }
 
-    // =========================
-    // BUTTON LOADING
-    // =========================
     const submitBtn = document.querySelector(".btn-next");
-
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Creating Account...";
 
     try {
+
         // =========================
-        // FIREBASE AUTH
+        // AUTH
         // =========================
         const userCredential = await createUserWithEmailAndPassword(
             auth,
@@ -141,30 +128,28 @@ signupForm.addEventListener("submit", async(e) => {
 
         const user = userCredential.user;
 
-        const fullName = `${firstName} ${middleName} ${lastName}`.replace(
-            /\s+/g,
-            " "
-        );
+        const fullName = `${firstName} ${middleName} ${lastName}`
+            .replace(/\s+/g, " ")
+            .trim();
 
-        // UPDATE AUTH PROFILE
         await updateProfile(user, {
             displayName: fullName
         });
 
         // =========================
-        // FIRESTORE DATABASE
-        // COLLECTION: student
+        // FIRESTORE ID = NAME (IMPORTANT)
         // =========================
+        const docId = `${firstName}_${lastName}`
+            .replace(/\s+/g, "_")
+            .toLowerCase();
 
-        const docId = `${firstName}_${lastName}`.replace(/\s+/g, "_").toLowerCase();
-
-        const fullDocId = `${firstName}_${middleName}_${lastName}`
-        .replace(/\s+/g, "_")
-        .toLowerCase();
-        await setDoc(doc(db, "student", user.fullDocId), {
+        await setDoc(doc(db, "student", docId), {
             uid: user.uid,
 
-            // PERSONAL INFO
+            // IDs
+            studentId,
+
+            // PERSONAL
             firstName,
             middleName,
             lastName,
@@ -175,13 +160,12 @@ signupForm.addEventListener("submit", async(e) => {
             email,
             address,
 
-            // SCHOOL DETAILS
+            // SCHOOL
             school,
             campus,
             college,
             course,
             yearLevel,
-            studentId,
             academicYear,
 
             requiredHours,
@@ -191,42 +175,31 @@ signupForm.addEventListener("submit", async(e) => {
             adviserName,
             adviserContact,
 
-            // DEPARTMENT
+            // DEPT
             selectedDepartment,
             workDays,
             preferredTime,
             notes,
 
-            // STATUS
             role: "student",
             applicationStatus: "pending",
 
             createdAt: serverTimestamp()
         });
 
-        // SUCCESS UI
         submitBtn.innerHTML = "✓ Account Created!";
         submitBtn.style.background = "#16a34a";
 
-        // REDIRECT
         setTimeout(() => {
             window.location.href = "/pages/index.html";
         }, 1500);
 
     } catch (error) {
-        console.error("Signup Error:", error);
+        console.error(error);
 
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Submit Application ✓";
 
-        if (error.code === "auth/email-already-in-use") {
-            alert("Email is already registered.");
-        } else if (error.code === "auth/invalid-email") {
-            alert("Invalid email address.");
-        } else if (error.code === "auth/weak-password") {
-            alert("Password is too weak.");
-        } else {
-            alert("Signup failed: " + error.message);
-        }
+        alert(error.message);
     }
 });
