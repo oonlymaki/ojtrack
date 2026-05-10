@@ -1,0 +1,356 @@
+  *,
+  *::before,
+  *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+  
+   :root {
+      --teal: #1a7f72;
+      --teal-dark: #135f57;
+      --teal-light: #2aa89a;
+      --gold: #c8902a;
+      --navy: #1c2a3a;
+      --sidebar-bg: #1c2a3a;
+      --sidebar-w: 210px;
+      --white: #ffffff;
+      --gray-50: #f7f9fb;
+      --gray-100: #eef1f5;
+      --gray-500: #7a8898;
+      --radius: 12px;
+      --card-shadow: 0 2px 12px rgba(0, 0, 0, .07);
+  }
+  
+  html,
+  body {
+      height: 100%;
+  }
+  
+  body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--gray-50);
+      color: var(--navy);
+      display: flex;
+      min-height: 100vh;
+  }
+  /* SIDEBAR */
+  
+  .sidebar {
+      width: var(--sidebar-w);
+      min-height: 100vh;
+      background: var(--sidebar-bg);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+  }
+  
+  .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: 1.4rem 1.25rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+  }
+  
+  .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--gold);
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: .9rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .sidebar-logo span {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: #fff;
+  }
+  
+  .sidebar-nav {
+      flex: 1;
+      padding: 1rem 0;
+  }
+  
+  .nav-item {
+      display: block;
+      padding: .68rem 1.25rem;
+      color: rgba(255, 255, 255, .55);
+      font-size: .88rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      transition: background .15s, color .15s;
+  }
+  
+  .nav-item:hover {
+      background: rgba(255, 255, 255, .06);
+      color: rgba(255, 255, 255, .85);
+  }
+  
+  .nav-item.active {
+      background: rgba(42, 168, 154, .15);
+      color: #fff;
+      border-left-color: var(--teal-light);
+      font-weight: 600;
+  }
+  
+  .sidebar-footer {
+      padding: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+  }
+  
+  .logout-btn {
+      color: rgba(255, 255, 255, .45);
+      font-size: .85rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: color .15s;
+  }
+  
+  .logout-btn:hover {
+      color: rgba(255, 255, 255, .8);
+  }
+  /* MAIN */
+  
+  .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      padding: 2rem 2.25rem;
+      min-height: 100vh;
+  }
+  
+  .top-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+  }
+  
+  .page-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: .3rem;
+  }
+  
+  .page-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+  }
+  
+  .datetime-box {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      padding: .7rem 1.1rem;
+      text-align: right;
+      box-shadow: var(--card-shadow);
+      min-width: 170px;
+  }
+  
+  .datetime-date {
+      font-size: .75rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      margin-bottom: .2rem;
+  }
+  
+  .datetime-time {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .04em;
+  }
+  /* CONTENT GRID */
+  
+  .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 1rem;
+      align-items: start;
+  }
+  /* CALENDAR PANEL */
+  
+  .panel {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-100);
+      box-shadow: var(--card-shadow);
+      padding: 1.5rem;
+  }
+  
+  .cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+  }
+  
+  .cal-month {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+  }
+  
+  .cal-label {
+      font-size: .78rem;
+      color: var(--gray-500);
+      font-weight: 500;
+  }
+  
+  .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+  }
+  
+  .cal-dow {
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      padding: .4rem 0 .6rem;
+  }
+  
+  .cal-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--navy);
+      cursor: pointer;
+      transition: background .12s;
+      position: relative;
+  }
+  
+  .cal-day:hover {
+      background: var(--gray-100);
+  }
+  
+  .cal-day.other-month {
+      color: var(--gray-500);
+      opacity: .45;
+  }
+  
+  .cal-day.today {
+      background: var(--teal);
+      color: #fff;
+      font-weight: 700;
+  }
+  
+  .cal-day.has-event {
+      background: #fef9e7;
+      color: var(--gold);
+      font-weight: 600;
+  }
+  
+  .cal-day.today.has-event {
+      background: var(--teal);
+      color: #fff;
+  }
+  
+  .cal-day.has-event::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+  }
+  
+  .cal-day.today::after {
+      background: #fff;
+  }
+  /* UPCOMING EVENTS */
+  
+  .events-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+  }
+  
+  .panel-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+  }
+  
+  .panel-sub {
+      font-size: .78rem;
+      color: var(--gray-500);
+      font-weight: 500;
+  }
+  
+  .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: .15rem;
+  }
+  
+  .event-item {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+      padding: .85rem 0;
+      border-bottom: 1px solid var(--gray-100);
+  }
+  
+  .event-item:last-child {
+      border-bottom: none;
+  }
+  
+  .event-bar {
+      width: 3px;
+      border-radius: 99px;
+      background: var(--teal);
+      flex-shrink: 0;
+      align-self: stretch;
+      min-height: 36px;
+  }
+  
+  .event-date {
+      font-family: 'Sora', sans-serif;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      padding-top: .05rem;
+      min-width: 44px;
+  }
+  
+  .event-title {
+      font-size: .86rem;
+      color: var(--gray-500);
+      line-height: 1.4;
+  }

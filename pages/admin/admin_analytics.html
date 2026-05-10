@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin_analytics.css">
+</head>
+
+<body>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-badge">LGU</div>
+            <div class="sidebar-logo-text">
+                <span class="portal-name">OJT Portal</span>
+                <span class="admin-pill">Admin</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+
+            <!-- OVERVIEW -->
+            <div class="sidebar-section-label">Overview</div>
+            <a class="nav-item" href="/pages/admin/admin_dashboard.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg> Dashboard
+            </a>
+
+            <!-- MANAGEMENT -->
+            <div class="sidebar-section-label">Management</div>
+            <a class="nav-item" href="/pages/admin/admin_applicants.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg> Applicants
+                <span class="nav-badge">12</span>
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_monitoring.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="2" />
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg> Intern Monitoring
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_documentreview.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                </svg> Document Review
+                <span class="nav-badge">5</span>
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_attendance.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                </svg> Attendance Logs
+            </a>
+
+            <!-- CONTENT -->
+            <div class="sidebar-section-label">Content</div>
+            <a class="nav-item" href="/pages/admin/admin_announcements.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg> Announcements
+            </a>
+            <a class="nav-item active" href="/pages/admin/admin_analytics.html">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                </svg> Analytics
+            </a>
+
+        </nav>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <div class="admin-avatar">JD</div>
+                <div class="admin-info">
+                    <div class="admin-name">Juan Dela Cruz</div>
+                    <div class="admin-role">OJT Coordinator</div>
+                </div>
+            </div>
+            <button class="logout-btn">← Log out</button>
+        </div>
+    </aside>
+
+    <!-- ── MAIN CONTENT ── -->
+    <main class="main">
+
+        <!-- Header -->
+        <div class="top-header">
+            <div>
+                <div class="page-label">Reports & Insights</div>
+                <div class="page-title">Analytics</div>
+            </div>
+            <div class="header-right">
+                <div class="datetime-box">
+                    <div class="datetime-date" id="dateDisplay"></div>
+                    <div class="datetime-time" id="timeDisplay"></div>
+                </div>
+                <button class="export-btn" onclick="exportReport()">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Export Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <span class="filter-label">Period:</span>
+            <div class="filter-group">
+                <button class="filter-btn" onclick="setFilter(this,'week')">This Week</button>
+                <button class="filter-btn active" onclick="setFilter(this,'month')">This Month</button>
+                <button class="filter-btn" onclick="setFilter(this,'semester')">Semester</button>
+                <button class="filter-btn" onclick="setFilter(this,'year')">Full Year</button>
+            </div>
+            <select class="filter-select" id="batchFilter">
+                <option value="">All Batches</option>
+                <option value="2026-1" selected>Batch 2026 – 1st</option>
+                <option value="2025-2">Batch 2025 – 2nd</option>
+                <option value="2025-1">Batch 2025 – 1st</option>
+            </select>
+            <select class="filter-select" id="deptFilter">
+                <option value="">All Departments</option>
+                <option value="hrmo">HRMO</option>
+                <option value="mayor">Mayor's Office</option>
+                <option value="legal">Legal Office</option>
+                <option value="engineering">Engineering</option>
+            </select>
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="stats-grid">
+            <div class="stat-card teal">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Total Applicants</span>
+                    <div class="stat-icon teal">
+                        <svg fill="none" stroke="#1a7f72" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">148</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-up">+14%</span> vs last period</div>
+            </div>
+            <div class="stat-card gold">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Completion Rate</span>
+                    <div class="stat-icon gold">
+                        <svg fill="none" stroke="#c8902a" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">78%</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-up">+6%</span> vs last period</div>
+            </div>
+            <div class="stat-card navy">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Avg Hours / Intern</span>
+                    <div class="stat-icon navy">
+                        <svg fill="none" stroke="#1c2a3a" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">214</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-up">+8 hrs</span> vs last period</div>
+            </div>
+            <div class="stat-card purple">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Schools Represented</span>
+                    <div class="stat-icon purple">
+                        <svg fill="none" stroke="#6c4aa0" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">9</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-up">+2</span> new this period</div>
+            </div>
+        </div>
+
+        <!-- Top Chart Row: Bar + Donut -->
+        <div class="chart-grid-top">
+
+            <!-- Bar Chart: Applicants by School -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">Applicants by School</div>
+                        <div class="panel-subtitle">Distribution across partner institutions — Batch 2026</div>
+                    </div>
+                    <button class="panel-action" onclick="toggleBarMode()">Toggle View</button>
+                </div>
+                <div class="chart-wrap" style="height:260px;">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Donut Chart: Completion Rate -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">Completion Status</div>
+                        <div class="panel-subtitle">Current batch breakdown</div>
+                    </div>
+                </div>
+                <div class="donut-wrap">
+                    <div class="donut-canvas-wrap">
+                        <canvas id="donutChart" width="200" height="200"></canvas>
+                        <div class="donut-center">
+                            <div class="donut-center-value">78%</div>
+                            <div class="donut-center-label">Completed</div>
+                        </div>
+                    </div>
+                    <div class="donut-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot-label">
+                                <div class="legend-dot" style="background:#1a7f72;"></div>
+                                <span class="legend-name">Completed</span>
+                            </div>
+                            <div class="legend-bar-track">
+                                <div class="legend-bar-fill" style="width:78%;background:#1a7f72;"></div>
+                            </div>
+                            <span class="legend-pct">78%</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot-label">
+                                <div class="legend-dot" style="background:#c8902a;"></div>
+                                <span class="legend-name">In Progress</span>
+                            </div>
+                            <div class="legend-bar-track">
+                                <div class="legend-bar-fill" style="width:14%;background:#c8902a;"></div>
+                            </div>
+                            <span class="legend-pct">14%</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot-label">
+                                <div class="legend-dot" style="background:#c4cdd8;"></div>
+                                <span class="legend-name">Withdrew</span>
+                            </div>
+                            <div class="legend-bar-track">
+                                <div class="legend-bar-fill" style="width:5%;background:#c4cdd8;"></div>
+                            </div>
+                            <span class="legend-pct">5%</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot-label">
+                                <div class="legend-dot" style="background:#e05d4f;"></div>
+                                <span class="legend-name">Failed</span>
+                            </div>
+                            <div class="legend-bar-track">
+                                <div class="legend-bar-fill" style="width:3%;background:#e05d4f;"></div>
+                            </div>
+                            <span class="legend-pct">3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Chart Row: Line + Table -->
+        <div class="chart-grid-bottom">
+
+            <!-- Line Chart: Hours Rendered Trend -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">Hours Rendered Trend</div>
+                        <div class="panel-subtitle">Weekly cumulative hours — all active interns</div>
+                    </div>
+                    <button class="panel-action">Weekly ▾</button>
+                </div>
+                <div class="chart-wrap" style="height:220px;">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+
+            <!-- School Performance Table -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">School Performance</div>
+                        <div class="panel-subtitle">Interns & completion rates by institution</div>
+                    </div>
+                    <a class="panel-action" href="#">Sort ▾</a>
+                </div>
+                <table class="school-table">
+                    <thead>
+                        <tr>
+                            <th>School</th>
+                            <th>Interns</th>
+                            <th>Progress</th>
+                            <th>Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="school-abbr">CSPC</div>
+                                <div class="school-full">Camarines Sur Polytechnic</div>
+                            </td>
+                            <td><span class="school-count">38</span></td>
+                            <td>
+                                <div class="tbl-bar-track">
+                                    <div class="tbl-bar-fill" style="width:90%"></div>
+                                </div>
+                            </td>
+                            <td><span class="rate-pill rate-high">92%</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="school-abbr">PL SFC</div>
+                                <div class="school-full">PL San Fernando College</div>
+                            </td>
+                            <td><span class="school-count">31</span></td>
+                            <td>
+                                <div class="tbl-bar-track">
+                                    <div class="tbl-bar-fill" style="width:84%"></div>
+                                </div>
+                            </td>
+                            <td><span class="rate-pill rate-high">84%</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="school-abbr">PSAC</div>
+                                <div class="school-full">Pampanga State Agricultural</div>
+                            </td>
+                            <td><span class="school-count">26</span></td>
+                            <td>
+                                <div class="tbl-bar-track">
+                                    <div class="tbl-bar-fill" style="width:77%"></div>
+                                </div>
+                            </td>
+                            <td><span class="rate-pill rate-high">77%</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="school-abbr">NEUST</div>
+                                <div class="school-full">NEUST – San Isidro</div>
+                            </td>
+                            <td><span class="school-count">22</span></td>
+                            <td>
+                                <div class="tbl-bar-track">
+                                    <div class="tbl-bar-fill" style="width:68%"></div>
+                                </div>
+                            </td>
+                            <td><span class="rate-pill rate-mid">68%</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="school-abbr">PNPA</div>
+                                <div class="school-full">Philippine National Police Acad.</div>
+                            </td>
+                            <td><span class="school-count">14</span></td>
+                            <td>
+                                <div class="tbl-bar-track">
+                                    <div class="tbl-bar-fill" style="width:57%"></div>
+                                </div>
+                            </td>
+                            <td><span class="rate-pill rate-mid">57%</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="school-abbr">STI</div>
+                                <div class="school-full">STI College – San Fernando</div>
+                            </td>
+                            <td><span class="school-count">17</span></td>
+                            <td>
+                                <div class="tbl-bar-track">
+                                    <div class="tbl-bar-fill" style="width:41%"></div>
+                                </div>
+                            </td>
+                            <td><span class="rate-pill rate-low">41%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Insight Cards -->
+        <div class="insights-row">
+            <div class="insight-card">
+                <div class="insight-icon teal">
+                    <svg fill="none" stroke="#1a7f72" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
+                    </svg>
+                </div>
+                <div class="insight-text">
+                    <div class="insight-head">Peak Rendering Week</div>
+                    <div class="insight-val">Week 6 — 1,842 hrs</div>
+                    <div class="insight-sub">Highest single-week total this semester</div>
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon gold">
+                    <svg fill="none" stroke="#c8902a" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                </div>
+                <div class="insight-text">
+                    <div class="insight-head">Top Contributing School</div>
+                    <div class="insight-val">CSPC — 38 interns</div>
+                    <div class="insight-sub">92% completion, highest rate overall</div>
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon navy">
+                    <svg fill="none" stroke="#1c2a3a" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                </div>
+                <div class="insight-text">
+                    <div class="insight-head">Needs Attention</div>
+                    <div class="insight-val">STI — 41% rate</div>
+                    <div class="insight-sub">Below 50% threshold; follow-up recommended</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script>
+        /* ── CLOCK ── */
+        function updateClock() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('dateDisplay').textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            let h = now.getHours();
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+            const m = String(now.getMinutes()).padStart(2, '0'),
+                s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('timeDisplay').textContent = `${String(h).padStart(2, '0')}:${m}:${s} ${ampm}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        /* ── CHART.JS DEFAULTS ── */
+        Chart.defaults.font.family = "'DM Sans', sans-serif";
+        Chart.defaults.color = '#7a8898';
+
+        /* ── BAR CHART: Applicants by School ── */
+        const barLabels = ['CSPC', 'PL SFC', 'PSAC', 'NEUST', 'STI', 'DMMMSU', 'MSU–Ilocos', 'PNPA', 'WMSU'];
+        const barData = [38, 31, 26, 22, 17, 14, 10, 8, 5];
+        const barColors = barData.map(v => v >= 30 ? '#1a7f72' : v >= 20 ? '#2aa89a' : v >= 10 ? '#c8902a' : '#c4cdd8');
+
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        let barChart = new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: barLabels,
+                datasets: [{
+                    label: 'Applicants',
+                    data: barData,
+                    backgroundColor: barColors,
+                    borderRadius: 7,
+                    borderSkipped: false,
+                    barThickness: 32,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1c2a3a',
+                        titleColor: '#fff',
+                        bodyColor: '#7a8898',
+                        padding: 10,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: ctx => `  ${ctx.parsed.y} interns`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        border: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 11
+                            }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: '#eef1f5'
+                        },
+                        border: {
+                            display: false,
+                            dash: [4, 4]
+                        },
+                        ticks: {
+                            stepSize: 10
+                        }
+                    }
+                }
+            }
+        });
+
+        let barHorizontal = false;
+
+        function toggleBarMode() {
+            barHorizontal = !barHorizontal;
+            barChart.destroy();
+            barChart = new Chart(barCtx, {
+                type: barHorizontal ? 'bar' : 'bar',
+                data: {
+                    labels: barLabels,
+                    datasets: [{
+                        label: 'Applicants',
+                        data: barData,
+                        backgroundColor: barColors,
+                        borderRadius: 7,
+                        borderSkipped: false,
+                        barThickness: barHorizontal ? 18 : 32,
+                    }]
+                },
+                options: {
+                    indexAxis: barHorizontal ? 'y' : 'x',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#1c2a3a',
+                            titleColor: '#fff',
+                            bodyColor: '#7a8898',
+                            padding: 10,
+                            cornerRadius: 8,
+                            callbacks: {
+                                label: ctx => `  ${ctx.parsed[barHorizontal ? 'x' : 'y']} interns`
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: barHorizontal ? '#eef1f5' : 'transparent'
+                            },
+                            border: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: barHorizontal ? 'transparent' : '#eef1f5'
+                            },
+                            border: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        /* ── DONUT CHART: Completion Status ── */
+        const donutCtx = document.getElementById('donutChart').getContext('2d');
+        new Chart(donutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed', 'In Progress', 'Withdrew', 'Failed'],
+                datasets: [{
+                    data: [78, 14, 5, 3],
+                    backgroundColor: ['#1a7f72', '#c8902a', '#c4cdd8', '#e05d4f'],
+                    borderWidth: 3,
+                    borderColor: '#ffffff',
+                    hoverBorderWidth: 4,
+                    hoverOffset: 6,
+                }]
+            },
+            options: {
+                responsive: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1c2a3a',
+                        titleColor: '#fff',
+                        bodyColor: '#7a8898',
+                        padding: 10,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: ctx => `  ${ctx.label}: ${ctx.parsed}%`
+                        }
+                    }
+                }
+            }
+        });
+
+        /* ── LINE CHART: Hours Rendered Trend ── */
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        const lineLabels = ['Wk 1', 'Wk 2', 'Wk 3', 'Wk 4', 'Wk 5', 'Wk 6', 'Wk 7', 'Wk 8', 'Wk 9', 'Wk 10'];
+        const lineData = [380, 620, 890, 1140, 1380, 1842, 1740, 1910, 2050, 2180];
+
+        const gradient = lineCtx.createLinearGradient(0, 0, 0, 220);
+        gradient.addColorStop(0, 'rgba(26,127,114,0.22)');
+        gradient.addColorStop(1, 'rgba(26,127,114,0)');
+
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: lineLabels,
+                datasets: [{
+                    label: 'Total Hours',
+                    data: lineData,
+                    borderColor: '#1a7f72',
+                    borderWidth: 2.5,
+                    pointBackgroundColor: '#1a7f72',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    fill: true,
+                    backgroundColor: gradient,
+                    tension: 0.4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1c2a3a',
+                        titleColor: '#fff',
+                        bodyColor: '#7a8898',
+                        padding: 10,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: ctx => `  ${ctx.parsed.y.toLocaleString()} hrs rendered`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        border: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 11
+                            }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: '#eef1f5'
+                        },
+                        border: {
+                            display: false,
+                            dash: [4, 4]
+                        },
+                        ticks: {
+                            callback: v => v >= 1000 ? `${v / 1000}k` : v
+                        }
+                    }
+                }
+            }
+        });
+
+        /* ── FILTER BUTTON ── */
+        function setFilter(btn, period) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        /* ── EXPORT ── */
+        function exportReport() {
+            const btn = document.querySelector('.export-btn');
+            btn.textContent = '✓ Exported!';
+            btn.style.background = '#135f57';
+            setTimeout(() => {
+                btn.innerHTML = `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export Report`;
+                btn.style.background = '';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

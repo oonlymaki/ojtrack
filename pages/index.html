@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Apply</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- LEFT -->
+        <div class="left">
+            <div>
+                <div class="left-logo">
+                    <div class="logo-badge">LGU</div>
+                    <span class="logo-name">OJT Portal</span>
+                </div>
+                <div class="left-heading">Apply for OJT at San Fernando City</div>
+                <div class="left-sub">Submit your application online and track your approval status in real time.</div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text"><strong>Document Submission</strong>Endorsement letter, TOR, medical certificate &amp; more.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text"><strong>Verification &amp; Acceptance</strong>HR review, interview, and acceptance letter issuance.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text"><strong>MOA Processing</strong>School–LGU agreement signing and notarization.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-footer">© 2026 Local Government Unit · OJT Management System</div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+            <div class="right-title">Welcome back</div>
+            <div class="right-sub">Sign in to check your application status.</div>
+
+            <div class="form-group">
+                <label class="form-label">Email address</label>
+                <input class="form-input" type="email" placeholder="JuanDelaCruz@school.edu.ph" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input class="form-input" type="password" placeholder="••••••••" />
+            </div>
+            <button class="btn-primary" onclick="window.location='/pages/student/dashboard.html'">Sign in</button>
+
+            <div class="divider">or</div>
+
+            <button class="btn-secondary" onclick="window.location='/pages/student/register.html'">Create an account</button>
+
+            <div class="signup-link">New applicant? <a href="/pages/student/register.html">Start your application →</a></div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/firebase.js"></script>
+
+</body>
+
+</html>

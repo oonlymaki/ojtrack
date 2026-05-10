@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Intern Monitoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin_monitoring.css">
+</head>
+
+<body>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-badge">LGU</div>
+            <div class="sidebar-logo-text">
+                <span class="portal-name">OJT Portal</span>
+                <span class="admin-pill">Admin</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="sidebar-section-label">Overview</div>
+            <a class="nav-item" href="/pages/admin/admin_dashboard.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z" />
+                    <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                </svg> Dashboard
+            </a>
+
+            <div class="sidebar-section-label">Management</div>
+            <a class="nav-item" href="/pages/admin/admin_applicants.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg> Applicants
+                <span class="nav-badge">9</span>
+            </a>
+            <a class="nav-item active" href="/pages/admin/admin_monitoring.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M6 20v-2a6 6 0 0 1 12 0v2" />
+                </svg> Intern Monitoring
+            </a>
+            <a class="nav-item" href="admin_documentreview.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+                    <rect x="9" y="3" width="6" height="4" rx="1" />
+                    <line x1="9" y1="12" x2="15" y2="12" />
+                    <line x1="9" y1="16" x2="13" y2="16" />
+                </svg> Document Review
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_attendance.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                </svg> Attendance Logs
+            </a>
+
+            <div class="sidebar-section-label">Content</div>
+            <a class="nav-item" href="/pages/admin/admin_announcements.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg> Announcements
+            </a>
+            <a class="nav-item" href="admin_analytics.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                </svg> Analytics
+            </a>
+        </nav>
+        <div class="sidebar-divider" style="margin: .4rem 0 0;"></div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <div class="admin-avatar">MA</div>
+                <div class="admin-info">
+                    <div class="admin-name">Maria Aquino</div>
+                    <div class="admin-role">HRMO Administrator</div>
+                </div>
+            </div>
+            <button class="logout-btn">← Log out</button>
+        </div>
+    </aside>
+
+    <!-- ── MAIN ── -->
+    <main class="main">
+        <div class="top-header">
+            <div>
+                <div class="page-label">Management</div>
+                <div class="page-title">Intern Monitoring</div>
+            </div>
+            <div class="header-right">
+                <div class="datetime-box">
+                    <div class="datetime-date" id="dateDisplay"></div>
+                    <div class="datetime-time" id="timeDisplay"></div>
+                </div>
+                <button class="export-btn" onclick="exportCSV()" style="display:flex;align-items:center;gap:.45rem;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Export Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="stats-grid">
+            <div class="stat-card teal">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Active Interns</span>
+                    <div class="stat-icon teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#1a7f72" stroke-width="2">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M6 20v-2a6 6 0 0 1 12 0v2" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">18</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-up">+3</span> from last batch</div>
+            </div>
+            <div class="stat-card gold">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Avg. Completion</span>
+                    <div class="stat-icon gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#c8902a" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">64%</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-warn">~</span> on track</div>
+            </div>
+            <div class="stat-card teal">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Completed OJT</span>
+                    <div class="stat-icon teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#1a7f72" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">4</div>
+                <div class="stat-card-sub">interns finished</div>
+            </div>
+            <div class="stat-card red">
+                <div class="stat-card-top">
+                    <span class="stat-card-label">Behind Schedule</span>
+                    <div class="stat-icon red">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">3</div>
+                <div class="stat-card-sub"><span class="stat-delta delta-down">!</span> needs attention</div>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="search-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input class="search-input" id="searchInput" type="text" placeholder="Search intern name or school…" oninput="filterTable()" />
+            </div>
+            <select class="filter-select" id="deptFilter" onchange="filterTable()">
+                <option value="">All Departments</option>
+                <option>HRMO</option>
+                <option>Mayor's Office</option>
+                <option>Internship Desk</option>
+                <option>Legal Office</option>
+                <option>Engineering Office</option>
+            </select>
+            <select class="filter-select" id="statusFilter" onchange="filterTable()">
+                <option value="">All Status</option>
+                <option>Active</option>
+                <option>Completed</option>
+                <option>Behind</option>
+                <option>At Risk</option>
+            </select>
+            <span class="toolbar-count" id="rowCount">Showing 18 interns</span>
+        </div>
+
+        <!-- Table Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-title">Hours Progress Tracker</span>
+                <a class="panel-action" href="#">Batch 2026</a>
+            </div>
+            <table id="internTable">
+                <thead>
+                    <tr>
+                        <th>Intern</th>
+                        <th>Department</th>
+                        <th class="hours-cell">Hours Rendered / Required</th>
+                        <th>Status</th>
+                        <th style="text-align:right;">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <span id="paginationInfo">Showing 1–18 of 18 interns</span>
+                <div class="page-btns">
+                    <button class="page-btn active">1</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Detail Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">Intern Details</span>
+            <button class="drawer-close" onclick="closeDrawer()">✕</button>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+    </div>
+
+    <script>
+        /* ── DATA ── */
+        const interns = [{
+            name: 'Sofia Domingo',
+            initials: 'SD',
+            color: '#1a7f72',
+            school: 'PLSan Fernando',
+            course: 'BS Computer Science',
+            dept: "Mayor's Office",
+            rendered: 312,
+            required: 480,
+            weeks: [48, 50, 52, 44, 50, 48]
+        }, {
+            name: 'Mark Santos',
+            initials: 'MS',
+            color: '#c8902a',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Information Technology',
+            dept: 'HRMO',
+            rendered: 420,
+            required: 480,
+            weeks: [72, 68, 74, 76, 70, 60]
+        }, {
+            name: 'Ana Reyes',
+            initials: 'AR',
+            color: '#2d4a68',
+            school: 'CSPC – Naga',
+            course: 'BS Accountancy',
+            dept: 'Legal Office',
+            rendered: 200,
+            required: 480,
+            weeks: [40, 38, 42, 40, 20, 20]
+        }, {
+            name: 'Juan dela Cruz',
+            initials: 'JC',
+            color: '#c0392b',
+            school: 'PLSan Fernando',
+            course: 'BS Civil Engineering',
+            dept: 'Engineering Office',
+            rendered: 90,
+            required: 480,
+            weeks: [18, 20, 16, 18, 18, 0]
+        }, {
+            name: 'Rina Villanueva',
+            initials: 'RV',
+            color: '#1a7f72',
+            school: 'NEUST – San Isidro',
+            course: 'BS Office Administration',
+            dept: 'Internship Desk',
+            rendered: 480,
+            required: 480,
+            weeks: [80, 80, 80, 80, 80, 80]
+        }, {
+            name: 'Carlo Mendoza',
+            initials: 'CM',
+            color: '#6b5b95',
+            school: 'CSPC – Naga',
+            course: 'BS Electrical Engineering',
+            dept: 'Engineering Office',
+            rendered: 350,
+            required: 480,
+            weeks: [60, 62, 58, 64, 56, 50]
+        }, {
+            name: 'Danna Torres',
+            initials: 'DT',
+            color: '#c8902a',
+            school: 'PLSan Fernando',
+            course: 'BS Public Administration',
+            dept: "Mayor's Office",
+            rendered: 445,
+            required: 480,
+            weeks: [74, 76, 72, 74, 75, 74]
+        }, {
+            name: 'Jerome Bautista',
+            initials: 'JB',
+            color: '#2aa89a',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Agriculture',
+            dept: 'HRMO',
+            rendered: 130,
+            required: 480,
+            weeks: [30, 28, 24, 22, 26, 0]
+        }, {
+            name: 'Lovely Castillo',
+            initials: 'LC',
+            color: '#d35400',
+            school: 'NEUST – San Isidro',
+            course: 'BS Nursing',
+            dept: 'HRMO',
+            rendered: 480,
+            required: 480,
+            weeks: [80, 80, 80, 80, 80, 80]
+        }, {
+            name: 'Ronnie Pascual',
+            initials: 'RP',
+            color: '#1a7f72',
+            school: 'PLSan Fernando',
+            course: 'BS Information Technology',
+            dept: 'Internship Desk',
+            rendered: 260,
+            required: 480,
+            weeks: [44, 46, 48, 42, 44, 36]
+        }, {
+            name: 'Michelle Garcia',
+            initials: 'MG',
+            color: '#2d4a68',
+            school: 'CSPC – Naga',
+            course: 'BS Criminology',
+            dept: 'Legal Office',
+            rendered: 480,
+            required: 480,
+            weeks: [80, 80, 80, 80, 80, 80]
+        }, {
+            name: 'Francis Lim',
+            initials: 'FL',
+            color: '#c0392b',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Mechanical Engineering',
+            dept: 'Engineering Office',
+            rendered: 100,
+            required: 480,
+            weeks: [20, 22, 18, 20, 20, 0]
+        }, {
+            name: 'Grace Navarro',
+            initials: 'GN',
+            color: '#c8902a',
+            school: 'PLSan Fernando',
+            course: 'BS Accountancy',
+            dept: 'Legal Office',
+            rendered: 380,
+            required: 480,
+            weeks: [64, 66, 62, 64, 60, 64]
+        }, {
+            name: 'Patrick Ocampo',
+            initials: 'PO',
+            color: '#1a7f72',
+            school: 'NEUST – San Isidro',
+            course: 'BS Computer Science',
+            dept: 'Internship Desk',
+            rendered: 320,
+            required: 480,
+            weeks: [52, 54, 56, 52, 52, 54]
+        }, {
+            name: 'Ella Ramos',
+            initials: 'ER',
+            color: '#6b5b95',
+            school: 'CSPC – Naga',
+            course: 'BS Entrepreneurship',
+            dept: "Mayor's Office",
+            rendered: 410,
+            required: 480,
+            weeks: [68, 70, 68, 66, 70, 68]
+        }, {
+            name: 'Harold Espinosa',
+            initials: 'HE',
+            color: '#2aa89a',
+            school: 'PLSan Fernando',
+            course: 'BS Civil Engineering',
+            dept: 'Engineering Office',
+            rendered: 295,
+            required: 480,
+            weeks: [50, 48, 52, 50, 48, 47]
+        }, {
+            name: 'Tricia Aguilar',
+            initials: 'TA',
+            color: '#d35400',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Office Administration',
+            dept: 'HRMO',
+            rendered: 355,
+            required: 480,
+            weeks: [60, 58, 62, 60, 56, 59]
+        }, {
+            name: 'Ryan Buenaventura',
+            initials: 'RB',
+            color: '#2d4a68',
+            school: 'NEUST – San Isidro',
+            course: 'BS Architecture',
+            dept: 'Engineering Office',
+            rendered: 460,
+            required: 480,
+            weeks: [78, 78, 76, 76, 78, 74]
+        }, ];
+
+        function statusOf(r, req) {
+            const pct = r / req;
+            if (r >= req) return {
+                label: 'Completed',
+                cls: 'badge-completed'
+            };
+            if (pct >= .75) return {
+                label: 'Active',
+                cls: 'badge-active'
+            };
+            if (pct >= .40) return {
+                label: 'At Risk',
+                cls: 'badge-warn'
+            };
+            return {
+                label: 'Behind',
+                cls: 'badge-behind'
+            };
+        }
+
+        function fillClass(r, req) {
+            const pct = r / req;
+            if (r >= req) return 'fill-done';
+            if (pct >= .75) return 'fill-ok';
+            if (pct >= .40) return 'fill-warn';
+            return 'fill-low';
+        }
+
+        function renderRows(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            data.forEach((d, i) => {
+                const pct = Math.min(100, Math.round((d.rendered / d.required) * 100));
+                const st = statusOf(d.rendered, d.required);
+                const fc = fillClass(d.rendered, d.required);
+                const tr = document.createElement('tr');
+                tr.dataset.idx = i;
+                tr.innerHTML = `
+          <td>
+            <div class="intern-cell">
+              <div class="intern-avatar" style="background:${d.color}">${d.initials}</div>
+              <div>
+                <div class="intern-name">${d.name}</div>
+                <div class="intern-school">${d.school}</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="dept-tag">${d.dept}</span></td>
+          <td class="hours-cell">
+            <div class="hours-nums">
+              <span class="hours-rendered">${d.rendered} hrs</span>
+              <span class="hours-required">/ ${d.required} hrs &nbsp;(${pct}%)</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill ${fc}" style="width:0%" data-target="${pct}%"></div>
+            </div>
+          </td>
+          <td><span class="badge ${st.cls}">${st.label}</span></td>
+          <td style="text-align:right;">
+            <button class="action-btn btn-view" onclick="openDrawer(${i})">View</button>
+          </td>`;
+                tbody.appendChild(tr);
+            });
+
+            // Animate bars on next frame
+            requestAnimationFrame(() => {
+                document.querySelectorAll('.progress-fill').forEach(el => {
+                    el.style.width = el.dataset.target;
+                });
+            });
+
+            document.getElementById('rowCount').textContent = `Showing ${data.length} intern${data.length !== 1 ? 's' : ''}`;
+            document.getElementById('paginationInfo').textContent = `Showing 1–${data.length} of ${data.length} interns`;
+        }
+
+        function filterTable() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const dept = document.getElementById('deptFilter').value;
+            const stat = document.getElementById('statusFilter').value;
+            const filtered = interns.filter(d => {
+                const matchQ = !q || d.name.toLowerCase().includes(q) || d.school.toLowerCase().includes(q);
+                const matchDept = !dept || d.dept === dept;
+                const matchStat = !stat || statusOf(d.rendered, d.required).label === stat;
+                return matchQ && matchDept && matchStat;
+            });
+            renderRows(filtered);
+        }
+
+        /* ── DRAWER ── */
+        function openDrawer(idx) {
+            const d = interns[idx];
+            const pct = Math.min(100, Math.round((d.rendered / d.required) * 100));
+            const st = statusOf(d.rendered, d.required);
+            const fc = fillClass(d.rendered, d.required);
+            const maxW = Math.max(...d.weeks);
+
+            document.getElementById('drawerBody').innerHTML = `
+        <div class="drawer-avatar-row">
+          <div class="drawer-avatar" style="background:${d.color}">${d.initials}</div>
+          <div>
+            <div class="drawer-name">${d.name}</div>
+            <div class="drawer-meta">${d.school} &middot; ${d.course}</div>
+          </div>
+        </div>
+
+        <div class="drawer-section">
+          <div class="drawer-section-title">Assignment</div>
+          <div class="info-row"><span class="info-label">Department</span><span class="info-value">${d.dept}</span></div>
+          <div class="info-row"><span class="info-label">Status</span><span class="badge ${st.cls}" style="font-size:.75rem">${st.label}</span></div>
+          <div class="info-row"><span class="info-label">Batch</span><span class="info-value">2026</span></div>
+        </div>
+
+        <div class="drawer-section">
+          <div class="drawer-section-title">Hours Progress</div>
+          <div class="drawer-progress-wrap">
+            <div class="drawer-progress-nums">
+              <span>Rendered: <strong>${d.rendered} hrs</strong></span>
+              <span>Required: <strong>${d.required} hrs</strong></span>
+            </div>
+            <div class="drawer-track">
+              <div class="drawer-fill ${fc}" style="width:${pct}%"></div>
+            </div>
+            <div style="text-align:right;font-size:.78rem;color:var(--gray-500);margin-top:.35rem">${pct}% complete</div>
+          </div>
+        </div>
+
+        <div class="drawer-section">
+          <div class="drawer-section-title">Weekly Breakdown</div>
+          <div class="weekly-log">
+            ${d.weeks.map((h, i) => `
+              <div class="log-row">
+                <span class="log-week">Week ${i + 1}</span>
+                <div class="log-bar-wrap"><div class="log-bar" style="width:${maxW ? Math.round((h / maxW) * 100) : 0}%"></div></div>
+                <span class="log-hours">${h} hrs</span>
+              </div>`).join('')}
+          </div>
+        </div>
+      `;
+            document.getElementById('drawerOverlay').classList.add('open');
+            document.getElementById('drawer').classList.add('open');
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawerOverlay').classList.remove('open');
+            document.getElementById('drawer').classList.remove('open');
+        }
+
+        /* ── CLOCK ── */
+        function updateClock() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('dateDisplay').textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            let h = now.getHours(); const ampm = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12;
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('timeDisplay').textContent = `${String(h).padStart(2, '0')}:${m}:${s} ${ampm}`;
+        }
+        updateClock(); setInterval(updateClock, 1000);
+
+        /* ── EXPORT CSV ── */
+        function exportCSV() {
+            const rows = [['Name', 'School', 'Course', 'Department', 'Rendered (hrs)', 'Required (hrs)', 'Completion (%)', 'Status']];
+            interns.forEach(d => {
+                const pct = Math.min(100, Math.round((d.rendered / d.required) * 100));
+                rows.push([d.name, d.school, d.course, d.dept, d.rendered, d.required, pct + '%', statusOf(d.rendered, d.required).label]);
+            });
+            const csv = rows.map(r => r.join(',')).join('\n');
+            const a = document.createElement('a'); a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+            a.download = 'intern_monitoring_report.csv'; a.click();
+        }
+
+        /* ── INIT ── */
+        renderRows(interns);
+    </script>
+</body>
+
+</html>

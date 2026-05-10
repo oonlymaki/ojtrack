@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Calendar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/calendar.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-badge">LGU</div>
+            <span>OJT Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a class="nav-item" href="/pages/student/dashboard.html">Dashboard</a>
+            <a class="nav-item" href="/pages/student/announcement.html">Announcements</a>
+            <a class="nav-item active" href="/pages/student/calender.html">Calendar &amp; Time</a>
+            <a class="nav-item" href="/pages/student/timetable.html">Timetables</a>
+            <a class="nav-item" href="/pages/student/reports.html">Progress Reports</a>
+            <a class="nav-item" href="recommendations.html">Recommendations</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="logout-btn" onclick="window.location='index.html'">Log out</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <div class="top-header">
+            <div>
+                <p class="page-label">Schedule Center</p>
+                <h1 class="page-title">Calendar and Time</h1>
+            </div>
+            <div class="datetime-box">
+                <div class="datetime-date" id="dateDisplay"></div>
+                <div class="datetime-time" id="timeDisplay"></div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <!-- Calendar -->
+            <div class="panel">
+                <div class="cal-header">
+                    <span class="cal-month">May 2026</span>
+                    <span class="cal-label">LGU Internship calendar</span>
+                </div>
+                <div class="cal-grid" id="calGrid"></div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="panel">
+                <div class="events-panel-header">
+                    <span class="panel-title">Upcoming Events</span>
+                    <span class="panel-sub">Next 14 days</span>
+                </div>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event-bar"></div>
+                        <div class="event-date">May 6</div>
+                        <div class="event-title">OJT Orientation, Session Hall</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-bar"></div>
+                        <div class="event-date">May 8</div>
+                        <div class="event-title">Data Privacy Briefing, Legal Office</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-bar"></div>
+                        <div class="event-date">May 10</div>
+                        <div class="event-title">Endorsement deadline</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-bar"></div>
+                        <div class="event-date">May 12</div>
+                        <div class="event-title">Office etiquette seminar</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-bar"></div>
+                        <div class="event-date">May 17</div>
+                        <div class="event-title">Department rotation briefing</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Clock
+        function updateClock() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('dateDisplay').textContent =
+                `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            let h = now.getHours();
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('timeDisplay').textContent =
+                `${String(h).padStart(2, '0')}:${m}:${s} ${ampm}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Calendar
+        const eventDays = [6, 8, 10, 12, 17];
+        const today = 4; // May 4 (hardcoded to match screenshot; swap with new Date().getDate() for live)
+
+        const dows = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const grid = document.getElementById('calGrid');
+
+        // Day-of-week headers
+        dows.forEach(d => {
+            const el = document.createElement('div');
+            el.className = 'cal-dow';
+            el.textContent = d;
+            grid.appendChild(el);
+        });
+
+        // May 2026 starts on Friday (day index 5)
+        const startDay = 5; // 0=Sun
+        const daysInMay = 31;
+        const prevMonthDays = 30; // April has 30 days
+
+        // Fill previous month days
+        for (let i = startDay - 1; i >= 0; i--) {
+            const el = document.createElement('div');
+            el.className = 'cal-day other-month';
+            el.textContent = prevMonthDays - i;
+            grid.appendChild(el);
+        }
+
+        // Fill May days
+        for (let d = 1; d <= daysInMay; d++) {
+            const el = document.createElement('div');
+            let cls = 'cal-day';
+            if (d === today) cls += ' today';
+            if (eventDays.includes(d)) cls += ' has-event';
+            el.className = cls;
+            el.textContent = d;
+            grid.appendChild(el);
+        }
+
+        // Fill next month days
+        const totalCells = Math.ceil((startDay + daysInMay) / 7) * 7;
+        const remaining = totalCells - startDay - daysInMay;
+        for (let d = 1; d <= remaining; d++) {
+            const el = document.createElement('div');
+            el.className = 'cal-day other-month';
+            el.textContent = d;
+            grid.appendChild(el);
+        }
+    </script>
+
+</body>
+
+</html>

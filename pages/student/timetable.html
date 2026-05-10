@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Timetables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/timetable.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-badge">LGU</div>
+            <span>OJT Portal</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a class="nav-item" href="/pages/student/dashboard.html">Dashboard</a>
+            <a class="nav-item" href="/pages/student/announcement.html">Announcements</a>
+            <a class="nav-item" href="/pages/student/calender.html">Calendar &amp; Time</a>
+            <a class="nav-item active" href="/pages/student/timetable.html">Timetables</a>
+            <a class="nav-item" href="/pages/student/reports.html">Progress Reports</a>
+            <a class="nav-item" href="/pages/student/recommendations.html">Recommendations</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="logout-btn" onclick="window.location='index.html'">Log out</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <div class="top-header">
+            <div>
+                <p class="page-label">Weekly Duty Plan</p>
+                <h1 class="page-title">OJT Timetables</h1>
+            </div>
+            <button class="week-btn">Week 1 schedule</button>
+        </div>
+
+        <div class="panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time In</th>
+                        <th>Morning Assignment</th>
+                        <th>Lunch</th>
+                        <th>Afternoon Assignment</th>
+                        <th>Time Out</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-day">Monday</td>
+                        <td class="col-time">8:00 AM</td>
+                        <td class="col-morning">HR records filing</td>
+                        <td class="col-lunch">12:00 PM</td>
+                        <td class="col-afternoon">Employee profile encoding</td>
+                        <td class="col-timeout">5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="col-day">Tuesday</td>
+                        <td class="col-time">8:00 AM</td>
+                        <td class="col-morning">Document receiving</td>
+                        <td class="col-lunch">12:00 PM</td>
+                        <td class="col-afternoon">Citizen assistance desk</td>
+                        <td class="col-timeout">5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="col-day">Wednesday</td>
+                        <td class="col-time">8:00 AM</td>
+                        <td class="col-morning">Payroll document checking</td>
+                        <td class="col-lunch">12:00 PM</td>
+                        <td class="col-afternoon">Office inventory update</td>
+                        <td class="col-timeout">5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="col-day">Thursday</td>
+                        <td class="col-time">8:00 AM</td>
+                        <td class="col-morning">Report encoding</td>
+                        <td class="col-lunch">12:00 PM</td>
+                        <td class="col-afternoon">Records archiving</td>
+                        <td class="col-timeout">5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="col-day">Friday</td>
+                        <td class="col-time">8:00 AM</td>
+                        <td class="col-morning">Weekly progress report</td>
+                        <td class="col-lunch">12:00 PM</td>
+                        <td class="col-afternoon">Supervisor feedback session</td>
+                        <td class="col-timeout">5:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+
+</html>

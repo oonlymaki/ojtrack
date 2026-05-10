@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin_dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-badge">LGU</div>
+            <div class="sidebar-logo-text">
+                <span class="portal-name">OJT Portal</span>
+                <span class="admin-pill">Admin</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="sidebar-section-label">Overview</div>
+            <a class="nav-item active" href="/pages/admin/admin_dashboard.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                </svg> Dashboard
+            </a>
+            <div class="sidebar-section-label">Management</div>
+            <a class="nav-item" href="/pages/admin/admin_applicants.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                </svg> Applicants
+                <span class="nav-badge">12</span>
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_monitoring.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg> Intern Monitoring
+            </a>
+            <a class="nav-item" href="admin_documentreview.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                        clip-rule="evenodd" />
+                </svg> Document Review
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_attendance.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd" />
+                </svg> Attendance Logs
+            </a>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-label">Content</div>
+            <a class="nav-item" href="/pages/admin/admin_announcements.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clip-rule="evenodd" />
+                </svg> Announcements
+            </a>
+            <a class="nav-item" href="admin_analytics.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                </svg> Analytics
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <div class="admin-avatar">MA</div>
+                <div class="admin-info">
+                    <div class="admin-name">Maria Aquino</div>
+                    <div class="admin-role">HRMO Administrator</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="window.location='/pages/index.html'">← Log out</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- Header -->
+        <div class="top-header">
+            <div>
+                <p class="page-label">Admin Control Panel</p>
+                <h1 class="page-title">Admin Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <button class="export-btn">↓ Export Report</button>
+                <div class="datetime-box">
+                    <div class="datetime-date" id="dateDisplay">Wednesday, May 6, 2026</div>
+                    <div class="datetime-time" id="timeDisplay">--:--:-- --</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Banner -->
+        <div class="alert-banner" id="alertBanner">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span><strong>12 pending applications</strong> are awaiting your review. Orientation is scheduled for May 6,
+                2026.</span>
+            <button class="alert-dismiss" onclick="document.getElementById('alertBanner').style.display='none'">Dismiss</button>
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="stats-grid">
+            <div class="stat-card teal">
+                <div class="stat-card-top">
+                    <div class="stat-card-label">Total Applicants</div>
+                    <div class="stat-icon teal">
+                        <svg viewBox="0 0 20 20" fill="#1a7f72">
+                            <path
+                                d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">48</div>
+                <div class="stat-card-sub">
+                    <span class="stat-delta delta-up">+8</span> vs last batch
+                </div>
+            </div>
+
+            <div class="stat-card gold">
+                <div class="stat-card-top">
+                    <div class="stat-card-label">Pending Approvals</div>
+                    <div class="stat-icon gold">
+                        <svg viewBox="0 0 20 20" fill="#c8902a">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">12</div>
+                <div class="stat-card-sub">
+                    <span class="stat-delta delta-warn">Urgent</span> 3 expiring soon
+                </div>
+            </div>
+
+            <div class="stat-card navy">
+                <div class="stat-card-top">
+                    <div class="stat-card-label">Active Interns</div>
+                    <div class="stat-icon navy">
+                        <svg viewBox="0 0 20 20" fill="#1c2a3a">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value">36</div>
+                <div class="stat-card-sub">
+                    <span class="stat-delta delta-up">+4</span> from last week
+                </div>
+            </div>
+
+            <div class="stat-card red">
+                <div class="stat-card-top">
+                    <div class="stat-card-label">Total Hours Rendered</div>
+                    <div class="stat-icon red">
+                        <svg viewBox="0 0 20 20" fill="#c0392b">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card-value" style="font-size:1.75rem;">5,616</div>
+                <div class="stat-card-sub">
+                    Avg <strong style="color:var(--navy)">156 hrs</strong> per intern
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Grid -->
+        <div class="bottom-grid">
+
+            <!-- Recent Applicants Table -->
+            <div class="panel">
+                <div class="panel-header">
+                    <span class="panel-title">Recent Applications</span>
+                    <a class="panel-action" href="#">View all →</a>
+                </div>
+                <table class="app-table">
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Course</th>
+                            <th>Applied</th>
+                            <th>Status</th>
+                            <th style="text-align:right;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="app-name">Ana Reyes</div>
+                                <div class="app-school">CSPC – San Fernando</div>
+                            </td>
+                            <td>BS Computer Science</td>
+                            <td class="app-date">May 4, 2026</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td style="text-align:right;">
+                                <button class="action-btn btn-approve">Approve</button>
+                                <button class="action-btn btn-reject">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="app-name">Carlo Mendoza</div>
+                                <div class="app-school">PLSan Fernando</div>
+                            </td>
+                            <td>BS Public Administration</td>
+                            <td class="app-date">May 3, 2026</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td style="text-align:right;">
+                                <button class="action-btn btn-approve">Approve</button>
+                                <button class="action-btn btn-reject">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="app-name">Sofia Domingo</div>
+                                <div class="app-school">Don Honorio Ventura SU</div>
+                            </td>
+                            <td>BS Accountancy</td>
+                            <td class="app-date">May 2, 2026</td>
+                            <td><span class="badge badge-approved">Approved</span></td>
+                            <td style="text-align:right;">
+                                <button class="action-btn btn-approve" style="color:var(--gray-500)">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="app-name">Mark Santos</div>
+                                <div class="app-school">Pampanga State Agricultural</div>
+                            </td>
+                            <td>BS Information Technology</td>
+                            <td class="app-date">Apr 30, 2026</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                            <td style="text-align:right;">
+                                <button class="action-btn btn-approve" style="color:var(--gray-500)">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="app-name">Liza Cruz</div>
+                                <div class="app-school">NEUST – San Isidro</div>
+                            </td>
+                            <td>BS Office Administration</td>
+                            <td class="app-date">Apr 28, 2026</td>
+                            <td><span class="badge badge-rejected">Rejected</span></td>
+                            <td style="text-align:right;">
+                                <button class="action-btn btn-approve" style="color:var(--gray-500)">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+
+                <!-- Department Capacity -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Department Capacity</span>
+                        <a class="panel-action" href="#">Manage</a>
+                    </div>
+                    <div class="dept-list">
+                        <div class="dept-item">
+                            <div class="dept-row">
+                                <span class="dept-name">HRMO</span>
+                                <span class="dept-count">8 / 10</span>
+                            </div>
+                            <div class="dept-track">
+                                <div class="dept-fill warn" style="width:80%"></div>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-row">
+                                <span class="dept-name">Mayor's Office</span>
+                                <span class="dept-count">5 / 8</span>
+                            </div>
+                            <div class="dept-track">
+                                <div class="dept-fill" style="width:62%"></div>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-row">
+                                <span class="dept-name">Internship Desk</span>
+                                <span class="dept-count">6 / 6</span>
+                            </div>
+                            <div class="dept-track">
+                                <div class="dept-fill full" style="width:100%"></div>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-row">
+                                <span class="dept-name">Legal Office</span>
+                                <span class="dept-count">3 / 8</span>
+                            </div>
+                            <div class="dept-track">
+                                <div class="dept-fill" style="width:37%"></div>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-row">
+                                <span class="dept-name">Engineering Office</span>
+                                <span class="dept-count">4 / 10</span>
+                            </div>
+                            <div class="dept-track">
+                                <div class="dept-fill" style="width:40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Recent Activity</span>
+                        <a class="panel-action" href="#">See all</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-dot-wrap">
+                                <div class="activity-dot dot-teal"></div>
+                                <div class="activity-line"></div>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Sofia Domingo</strong> was approved and assigned to HRMO.
+                                </div>
+                                <div class="activity-time">Today, 9:14 AM</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot-wrap">
+                                <div class="activity-dot dot-gold"></div>
+                                <div class="activity-line"></div>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Week 4 report</strong> submitted by Mark Santos — awaiting review.</div>
+                                <div class="activity-time">Today, 8:02 AM</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot-wrap">
+                                <div class="activity-dot dot-red"></div>
+                                <div class="activity-line"></div>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Liza Cruz</strong> application rejected — incomplete documents.
+                                </div>
+                                <div class="activity-time">Yesterday, 4:30 PM</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot-wrap">
+                                <div class="activity-dot dot-teal"></div>
+                                <div class="activity-line"></div>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Orientation announcement</strong> posted to all batch 2026 interns.</div>
+                                <div class="activity-time">May 4, 2026</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot-wrap">
+                                <div class="activity-dot dot-gray"></div>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>3 new applications</strong> received from CSPC and PLSan Fernando.</div>
+                                <div class="activity-time">May 3, 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /right-col -->
+
+        </div>
+        <!-- /bottom-grid -->
+
+    </main>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const dateStr = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            let h = now.getHours();
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('dateDisplay').textContent = dateStr;
+            document.getElementById('timeDisplay').textContent = `${String(h).padStart(2, '0')}:${m}:${s} ${ampm}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Approve / Reject button interactions
+        document.querySelectorAll('.btn-approve, .btn-reject').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const badge = row.querySelector('.badge');
+                const actionsCell = row.querySelector('td:last-child');
+                if (this.classList.contains('btn-approve')) {
+                    badge.className = 'badge badge-approved';
+                    badge.textContent = 'Approved';
+                } else {
+                    badge.className = 'badge badge-rejected';
+                    badge.textContent = 'Rejected';
+                }
+                actionsCell.innerHTML = '<button class="action-btn" style="color:var(--gray-500)">View</button>';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

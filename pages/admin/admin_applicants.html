@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGU OJT Portal | Applicants Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin_applicants.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-badge">LGU</div>
+            <div class="sidebar-logo-text">
+                <span class="portal-name">OJT Portal</span>
+                <span class="admin-pill">Admin</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section-label">Overview</div>
+            <a class="nav-item" href="/pages/admin/admin_dashboard.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                </svg> Dashboard
+            </a>
+            <div class="sidebar-section-label">Management</div>
+            <a class="nav-item active" href="/pages/admin/admin_applicants.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                </svg> Applicants
+                <span class="nav-badge" id="sidebarBadge">12</span>
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_monitoring.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg> Intern Monitoring
+            </a>
+            <a class="nav-item" href="/pages/admin/admin_documentreview.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                        clip-rule="evenodd" />
+                </svg> Document Review
+            </a>
+            <a class="nav-item" href="admin_attendance.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd" />
+                </svg> Attendance Logs
+            </a>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-label">Content</div>
+            <a class="nav-item" href="/pages/admin/admin_announcements.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clip-rule="evenodd" />
+                </svg> Announcements
+            </a>
+            <a class="nav-item" href="admin_analytics.html">
+                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a１ １ ０ ０１１ １v１２a１ １ ０ ０１－１ １h－２a１ １ ０ ０１－１－１V４z" />
+                </svg> Analytics
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <div class="admin-avatar">MA</div>
+                <div class="admin-info">
+                    <div class="admin-name">Maria Aquino</div>
+                    <div class="admin-role">HRMO Administrator</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="window.location='/pages/index.html'">← Log out</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- Header -->
+        <div class="top-header">
+            <div>
+                <p class="page-label">Admin Management</p>
+                <h1 class="page-title">Applicants</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary">↓ Export CSV</button>
+                <button class="btn-primary">+ Add Applicant</button>
+            </div>
+        </div>
+
+        <!-- Summary Strip -->
+        <div class="summary-strip">
+            <div class="summary-card s-all filter-active" data-filter="all" onclick="filterCards('all', this)">
+                <div class="summary-label">All Applicants</div>
+                <div class="summary-value" id="cnt-all">48</div>
+            </div>
+            <div class="summary-card s-pend" data-filter="pending" onclick="filterCards('pending', this)">
+                <div class="summary-label">Pending</div>
+                <div class="summary-value" id="cnt-pending">12</div>
+            </div>
+            <div class="summary-card s-appr" data-filter="approved" onclick="filterCards('approved', this)">
+                <div class="summary-label">Approved</div>
+                <div class="summary-value" id="cnt-approved">22</div>
+            </div>
+            <div class="summary-card s-actv" data-filter="active" onclick="filterCards('active', this)">
+                <div class="summary-label">Active OJT</div>
+                <div class="summary-value" id="cnt-active">10</div>
+            </div>
+            <div class="summary-card s-rej" data-filter="rejected" onclick="filterCards('rejected', this)">
+                <div class="summary-label">Rejected</div>
+                <div class="summary-value" id="cnt-rejected">4</div>
+            </div>
+        </div>
+
+        <!-- Bulk Bar -->
+        <div class="bulk-bar" id="bulkBar">
+            <span class="bulk-bar-label"><span id="bulkCount">0</span> selected</span>
+            <button class="bulk-btn" onclick="bulkAction('approve')">✓ Approve All</button>
+            <button class="bulk-btn danger" onclick="bulkAction('reject')">✕ Reject All</button>
+            <button class="bulk-cancel" onclick="clearSelection()">✕</button>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="search-wrap">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input class="search-input" type="text" placeholder="Search by name, school, or course…" id="searchInput" oninput="applyFilters()" />
+            </div>
+            <select class="filter-select" id="schoolFilter" onchange="applyFilters()">
+                <option value="">All Schools</option>
+                <option>CSPC – San Fernando</option>
+                <option>PLSan Fernando</option>
+                <option>Don Honorio Ventura SU</option>
+                <option>Pampanga State Agricultural</option>
+                <option>NEUST – San Isidro</option>
+                <option>Holy Angel University</option>
+                <option>University of the Philippines</option>
+            </select>
+            <select class="filter-select" id="courseFilter" onchange="applyFilters()">
+                <option value="">All Courses</option>
+                <option>BS Computer Science</option>
+                <option>BS Information Technology</option>
+                <option>BS Public Administration</option>
+                <option>BS Accountancy</option>
+                <option>BS Office Administration</option>
+                <option>BS Business Administration</option>
+                <option>BS Civil Engineering</option>
+            </select>
+            <span class="results-count">Showing <strong id="shownCount">48</strong> of 48</span>
+        </div>
+
+        <!-- Table -->
+        <div class="panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-check">
+                            <input type="checkbox" class="row-checkbox" id="selectAll" onchange="toggleAll(this)" />
+                        </th>
+                        <th class="sortable" onclick="sortTable('name')">Applicant <span class="sort-icon">↕</span></th>
+                        <th class="sortable" onclick="sortTable('school')">School &amp; Course <span class="sort-icon">↕</span></th>
+                        <th class="sortable" onclick="sortTable('date')">Date Applied <span class="sort-icon">↕</span>
+                        </th>
+                        <th>Department</th>
+                        <th class="sortable" onclick="sortTable('status')">Status <span class="sort-icon">↕</span></th>
+                        <th style="text-align:right;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <div class="empty-icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="empty-title">No applicants found</div>
+                <div class="empty-sub">Try adjusting your search or filter.</div>
+            </div>
+            <div class="pagination">
+                <span id="pageInfo">Showing 1–20 of 48</span>
+                <div class="page-btns">
+                    <button class="page-btn" id="prevBtn" onclick="changePage(-1)">‹</button>
+                    <button class="page-btn active" id="page1" onclick="goPage(1)">1</button>
+                    <button class="page-btn" id="page2" onclick="goPage(2)">2</button>
+                    <button class="page-btn" id="page3" onclick="goPage(3)">3</button>
+                    <button class="page-btn" onclick="changePage(1)">›</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Detail Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">Applicant Details</span>
+            <button class="drawer-close" onclick="closeDrawer()">✕</button>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+        <div class="drawer-footer" id="drawerFooter"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-dot" id="toastDot"></div>
+        <span id="toastMsg"></span>
+    </div>
+
+    <script>
+        const COLORS = ['#1a7f72', '#c8902a', '#1c2a3a', '#3050a0', '#7b5ea7', '#2980b9', '#27ae60', '#8e44ad'];
+
+        const APPLICANTS = [{
+            id: 'APP-001',
+            name: 'Ana Reyes',
+            initials: 'AR',
+            school: 'CSPC – San Fernando',
+            course: 'BS Computer Science',
+            date: '2026-05-04',
+            dept: 'HRMO',
+            status: 'pending'
+        }, {
+            id: 'APP-002',
+            name: 'Carlo Mendoza',
+            initials: 'CM',
+            school: 'PLSan Fernando',
+            course: 'BS Public Administration',
+            date: '2026-05-03',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-003',
+            name: 'Sofia Domingo',
+            initials: 'SD',
+            school: 'Don Honorio Ventura SU',
+            course: 'BS Accountancy',
+            date: '2026-05-02',
+            dept: 'HRMO',
+            status: 'approved'
+        }, {
+            id: 'APP-004',
+            name: 'Mark Santos',
+            initials: 'MS',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Information Technology',
+            date: '2026-04-30',
+            dept: 'Mayor\'s Office',
+            status: 'active'
+        }, {
+            id: 'APP-005',
+            name: 'Liza Cruz',
+            initials: 'LC',
+            school: 'NEUST – San Isidro',
+            course: 'BS Office Administration',
+            date: '2026-04-28',
+            dept: null,
+            status: 'rejected'
+        }, {
+            id: 'APP-006',
+            name: 'Jerome Bautista',
+            initials: 'JB',
+            school: 'Holy Angel University',
+            course: 'BS Business Administration',
+            date: '2026-04-27',
+            dept: 'Legal Office',
+            status: 'active'
+        }, {
+            id: 'APP-007',
+            name: 'Maria Villanueva',
+            initials: 'MV',
+            school: 'University of the Philippines',
+            course: 'BS Civil Engineering',
+            date: '2026-04-25',
+            dept: 'Engineering Office',
+            status: 'active'
+        }, {
+            id: 'APP-008',
+            name: 'Renz Dela Cruz',
+            initials: 'RD',
+            school: 'CSPC – San Fernando',
+            course: 'BS Computer Science',
+            date: '2026-04-24',
+            dept: 'HRMO',
+            status: 'active'
+        }, {
+            id: 'APP-009',
+            name: 'Pia Gonzales',
+            initials: 'PG',
+            school: 'PLSan Fernando',
+            course: 'BS Accountancy',
+            date: '2026-04-22',
+            dept: 'Internship Desk',
+            status: 'active'
+        }, {
+            id: 'APP-010',
+            name: 'Kevin Reyes',
+            initials: 'KR',
+            school: 'Don Honorio Ventura SU',
+            course: 'BS Information Technology',
+            date: '2026-04-20',
+            dept: 'Legal Office',
+            status: 'approved'
+        }, {
+            id: 'APP-011',
+            name: 'Tricia Lopez',
+            initials: 'TL',
+            school: 'Holy Angel University',
+            course: 'BS Public Administration',
+            date: '2026-04-19',
+            dept: 'Mayor\'s Office',
+            status: 'approved'
+        }, {
+            id: 'APP-012',
+            name: 'Ryan Torres',
+            initials: 'RT',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Computer Science',
+            date: '2026-04-18',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-013',
+            name: 'Jasmine Aquino',
+            initials: 'JA',
+            school: 'NEUST – San Isidro',
+            course: 'BS Office Administration',
+            date: '2026-04-17',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-014',
+            name: 'Dennis Flores',
+            initials: 'DF',
+            school: 'University of the Philippines',
+            course: 'BS Business Administration',
+            date: '2026-04-15',
+            dept: null,
+            status: 'rejected'
+        }, {
+            id: 'APP-015',
+            name: 'Camille Reyes',
+            initials: 'CR',
+            school: 'CSPC – San Fernando',
+            course: 'BS Accountancy',
+            date: '2026-04-14',
+            dept: 'Internship Desk',
+            status: 'approved'
+        }, {
+            id: 'APP-016',
+            name: 'Nathan Espiritu',
+            initials: 'NE',
+            school: 'PLSan Fernando',
+            course: 'BS Civil Engineering',
+            date: '2026-04-12',
+            dept: 'Engineering Office',
+            status: 'approved'
+        }, {
+            id: 'APP-017',
+            name: 'Ella Manalo',
+            initials: 'EM',
+            school: 'Holy Angel University',
+            course: 'BS Information Technology',
+            date: '2026-04-10',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-018',
+            name: 'Jake Soriano',
+            initials: 'JS',
+            school: 'Don Honorio Ventura SU',
+            course: 'BS Public Administration',
+            date: '2026-04-09',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-019',
+            name: 'Bea Navarro',
+            initials: 'BN',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Office Administration',
+            date: '2026-04-08',
+            dept: 'HRMO',
+            status: 'approved'
+        }, {
+            id: 'APP-020',
+            name: 'Luis Magpantay',
+            initials: 'LM',
+            school: 'NEUST – San Isidro',
+            course: 'BS Computer Science',
+            date: '2026-04-07',
+            dept: null,
+            status: 'rejected'
+        }, {
+            id: 'APP-021',
+            name: 'Grace Tolentino',
+            initials: 'GT',
+            school: 'University of the Philippines',
+            course: 'BS Accountancy',
+            date: '2026-04-06',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-022',
+            name: 'Paolo Santos',
+            initials: 'PS',
+            school: 'CSPC – San Fernando',
+            course: 'BS Business Administration',
+            date: '2026-04-05',
+            dept: 'Mayor\'s Office',
+            status: 'approved'
+        }, {
+            id: 'APP-023',
+            name: 'Rina Castro',
+            initials: 'RC',
+            school: 'PLSan Fernando',
+            course: 'BS Information Technology',
+            date: '2026-04-04',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-024',
+            name: 'Vince dela Rosa',
+            initials: 'VR',
+            school: 'Holy Angel University',
+            course: 'BS Civil Engineering',
+            date: '2026-04-03',
+            dept: 'Engineering Office',
+            status: 'approved'
+        }, {
+            id: 'APP-025',
+            name: 'Kaye Aguilar',
+            initials: 'KA',
+            school: 'Don Honorio Ventura SU',
+            course: 'BS Public Administration',
+            date: '2026-04-02',
+            dept: null,
+            status: 'pending'
+        }, {
+            id: 'APP-026',
+            name: 'Ian Mercado',
+            initials: 'IM',
+            school: 'Pampanga State Agricultural',
+            course: 'BS Accountancy',
+            date: '2026-04-01',
+            dept: 'HRMO',
+            status: 'approved'
+        }, {
+            id: 'APP-027',
+            name: 'Nikki Pascual',
+            initials: 'NP',
+            school: 'NEUST – San Isidro',
+            course: 'BS Computer Science',
+            date: '2026-03-30',
+            dept: 'Internship Desk',
+            status: 'active'
+        }, {
+            id: 'APP-028',
+            name: 'Franz Reyes',
+            initials: 'FR',
+            school: 'University of the Philippines',
+            course: 'BS Office Administration',
+            date: '2026-03-28',
+            dept: null,
+            status: 'rejected'
+        }, {
+            id: 'APP-029',
+            name: 'Alyssa Buenaventura',
+            initials: 'AB',
+            school: 'CSPC – San Fernando',
+            course: 'BS Information Technology',
+            date: '2026-03-27',
+            dept: 'Legal Office',
+            status: 'approved'
+        }, {
+            id: 'APP-030',
+            name: 'Marco Villafuerte',
+            initials: 'MV',
+            school: 'PLSan Fernando',
+            course: 'BS Business Administration',
+            date: '2026-03-25',
+            dept: 'Mayor\'s Office',
+            status: 'approved'
+        }, ];
+
+        let data = APPLICANTS.map((a, i) => ({...a,
+            color: COLORS[i % COLORS.length],
+            selected: false
+        }));
+        let activeFilter = 'all';
+        let sortKey = 'date';
+        let sortDir = -1;
+        let currentPage = 1;
+        const PAGE_SIZE = 15;
+
+        function formatDate(d) {
+            const [y, m, day] = d.split('-');
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return `${months[+m - 1]} ${+day}, ${y}`;
+        }
+
+        function badgeHTML(status) {
+            const map = {
+                pending: ['badge-pending', 'Pending'],
+                approved: ['badge-approved', 'Approved'],
+                active: ['badge-active', 'Active OJT'],
+                rejected: ['badge-rejected', 'Rejected'],
+            };
+            const [cls, label] = map[status] || ['badge-pending', 'Unknown'];
+            return `<span class="badge ${cls}"><span class="badge-dot"></span>${label}</span>`;
+        }
+
+        function actionsHTML(id, status) {
+            if (status === 'pending') {
+                return `<div class="actions-cell">
+            <button class="act-btn act-view"    onclick="openDrawer('${id}')">View</button>
+            <button class="act-btn act-approve" onclick="setStatus('${id}','approved')">Approve</button>
+            <button class="act-btn act-reject"  onclick="setStatus('${id}','rejected')">Reject</button>
+            <button class="act-more" onclick="openDrawer('${id}')">···</button>
+        </div>`;
+            }
+            return `<div class="actions-cell">
+        <button class="act-btn act-view" onclick="openDrawer('${id}')">View</button>
+        ${status === 'approved' ? `<button class="act-btn act-approve" onclick="setStatus('${id}','active')">Activate</button>` : ''}
+        <button class="act-more" onclick="openDrawer('${id}')">···</button>
+    </div>`;
+        }
+
+        function getFiltered() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const school = document.getElementById('schoolFilter').value;
+            const course = document.getElementById('courseFilter').value;
+            return data.filter(a => {
+                if (activeFilter !== 'all' && a.status !== activeFilter) return false;
+                if (school && a.school !== school) return false;
+                if (course && a.course !== course) return false;
+                if (q && !a.name.toLowerCase().includes(q) && !a.school.toLowerCase().includes(q) && !a.course.toLowerCase().includes(q)) return false;
+                return true;
+            }).sort((a, b) => {
+                let av = a[sortKey], bv = b[sortKey];
+                if (sortKey === 'date') return (av < bv ? -1 : 1) * sortDir;
+                return av.localeCompare(bv) * sortDir;
+            });
+        }
+
+        function renderTable() {
+            const filtered = getFiltered();
+            const start = (currentPage - 1) * PAGE_SIZE;
+            const page = filtered.slice(start, start + PAGE_SIZE);
+            const tbody = document.getElementById('tableBody');
+            const empty = document.getElementById('emptyState');
+
+            if (page.length === 0) { tbody.innerHTML = ''; empty.style.display = ''; }
+            else { empty.style.display = 'none'; }
+
+            tbody.innerHTML = page.map((a, i) => `
+        <tr id="row-${a.id}" class="${a.selected ? 'selected' : ''}" style="animation-delay:${i * 0.03}s">
+            <td class="col-check">
+                <input type="checkbox" class="row-checkbox" ${a.selected ? 'checked' : ''} onchange="toggleRow('${a.id}', this)" />
+            </td>
+            <td>
+                <div class="applicant-cell">
+                    <div class="applicant-avatar" style="background:${a.color}">${a.initials}</div>
+                    <div>
+                        <div class="applicant-name">${a.name}</div>
+                        <div class="applicant-id">${a.id}</div>
+                    </div>
+                </div>
+            </td>
+            <td class="col-school">
+                <div class="school-name">${a.school}</div>
+                <div class="course-name">${a.course}</div>
+            </td>
+            <td class="col-date">${formatDate(a.date)}</td>
+            <td class="col-dept">${a.dept ? a.dept : '<span class="no-assign">Unassigned</span>'}</td>
+            <td>${badgeHTML(a.status)}</td>
+            <td style="text-align:right;">${actionsHTML(a.id, a.status)}</td>
+        </tr>
+    `).join('');
+
+            document.getElementById('shownCount').textContent = filtered.length;
+            updateSummaryCounts();
+            updatePagination(filtered.length);
+            updateBulkBar();
+        }
+
+        function updateSummaryCounts() {
+            document.getElementById('cnt-all').textContent = data.length;
+            document.getElementById('cnt-pending').textContent = data.filter(a => a.status === 'pending').length;
+            document.getElementById('cnt-approved').textContent = data.filter(a => a.status === 'approved').length;
+            document.getElementById('cnt-active').textContent = data.filter(a => a.status === 'active').length;
+            document.getElementById('cnt-rejected').textContent = data.filter(a => a.status === 'rejected').length;
+            document.getElementById('sidebarBadge').textContent = data.filter(a => a.status === 'pending').length;
+        }
+
+        function updatePagination(total) {
+            const pages = Math.ceil(total / PAGE_SIZE);
+            const start = Math.min((currentPage - 1) * PAGE_SIZE + 1, total);
+            const end = Math.min(currentPage * PAGE_SIZE, total);
+            document.getElementById('pageInfo').textContent = total ? `Showing ${start}–${end} of ${total}` : 'No results';
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`page${i}`);
+                if (!btn) continue;
+                btn.style.display = i <= pages ? '' : 'none';
+                btn.classList.toggle('active', i === currentPage);
+            }
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+        }
+
+        function filterCards(filter, el) {
+            document.querySelectorAll('.summary-card').forEach(c => c.classList.remove('filter-active'));
+            el.classList.add('filter-active');
+            activeFilter = filter;
+            currentPage = 1;
+            renderTable();
+        }
+
+        function applyFilters() { currentPage = 1; renderTable(); }
+
+        function sortTable(key) {
+            if (sortKey === key) sortDir *= -1; else { sortKey = key; sortDir = 1; }
+            document.querySelectorAll('th .sort-icon').forEach(s => { s.closest('th').classList.remove('sort-asc', 'sort-desc'); });
+            const ths = [...document.querySelectorAll('th.sortable')];
+            const keyMap = { name: 0, school: 1, date: 2, status: 4 };
+            const th = ths[keyMap[key]];
+            if (th) th.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
+            renderTable();
+        }
+
+        function setStatus(id, newStatus) {
+            const a = data.find(d => d.id === id);
+            if (!a) return;
+            const old = a.status;
+            a.status = newStatus;
+            if (newStatus === 'approved' || newStatus === 'active') a.dept = a.dept || 'HRMO';
+            renderTable();
+            showToast(newStatus === 'approved' ? '#1a7f72' : newStatus === 'active' ? '#3050a0' : '#c0392b',
+                `${a.name} marked as ${newStatus}.`);
+        }
+
+        function toggleRow(id, cb) {
+            const a = data.find(d => d.id === id);
+            if (a) a.selected = cb.checked;
+            updateBulkBar();
+            const row = document.getElementById(`row-${id}`);
+            if (row) row.classList.toggle('selected', cb.checked);
+        }
+
+        function toggleAll(cb) {
+            const filtered = getFiltered();
+            const page = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+            page.forEach(a => { a.selected = cb.checked; });
+            renderTable();
+        }
+
+        function updateBulkBar() {
+            const sel = data.filter(a => a.selected).length;
+            const bar = document.getElementById('bulkBar');
+            document.getElementById('bulkCount').textContent = sel;
+            bar.classList.toggle('visible', sel > 0);
+        }
+
+        function clearSelection() {
+            data.forEach(a => a.selected = false);
+            document.getElementById('selectAll').checked = false;
+            renderTable();
+        }
+
+        function bulkAction(action) {
+            const sel = data.filter(a => a.selected);
+            sel.forEach(a => {
+                a.status = action === 'approve' ? 'approved' : 'rejected';
+                a.selected = false;
+                if (action === 'approve') a.dept = a.dept || 'HRMO';
+            });
+            showToast(action === 'approve' ? '#1a7f72' : '#c0392b',
+                `${sel.length} applicant${sel.length > 1 ? 's' : ''} ${action === 'approve' ? 'approved' : 'rejected'}.`);
+            clearSelection();
+        }
+
+        function changePage(dir) {
+            const total = getFiltered().length;
+            const pages = Math.ceil(total / PAGE_SIZE);
+            currentPage = Math.max(1, Math.min(pages, currentPage + dir));
+            renderTable();
+        }
+        function goPage(p) { currentPage = p; renderTable(); }
+
+        /* Drawer */
+        function openDrawer(id) {
+            const a = data.find(d => d.id === id);
+            if (!a) return;
+            document.getElementById('drawerBody').innerHTML = `
+        <div class="drawer-avatar-row">
+            <div class="drawer-avatar" style="background:${a.color}">${a.initials}</div>
+            <div>
+                <div class="drawer-name">${a.name}</div>
+                <div class="drawer-sub">${a.id} · ${badgeHTML(a.status)}</div>
+            </div>
+        </div>
+        <div class="drawer-section">
+            <div class="drawer-section-label">Academic Info</div>
+            <div class="drawer-field"><div class="drawer-field-label">School</div><div class="drawer-field-value">${a.school}</div></div>
+            <div class="drawer-field"><div class="drawer-field-label">Course</div><div class="drawer-field-value">${a.course}</div></div>
+        </div>
+        <div class="drawer-divider"></div>
+        <div class="drawer-section">
+            <div class="drawer-section-label">Application</div>
+            <div class="drawer-field"><div class="drawer-field-label">Date Applied</div><div class="drawer-field-value">${formatDate(a.date)}</div></div>
+            <div class="drawer-field"><div class="drawer-field-label">Assigned Department</div><div class="drawer-field-value">${a.dept || '—'}</div></div>
+            <div class="drawer-field"><div class="drawer-field-label">Status</div><div class="drawer-field-value">${badgeHTML(a.status)}</div></div>
+        </div>
+        <div class="drawer-divider"></div>
+        <div class="drawer-section">
+            <div class="drawer-section-label">Documents</div>
+            <div class="drawer-field"><div class="drawer-field-label">Endorsement Letter</div><div class="drawer-field-value" style="color:var(--teal)">📄 Submitted</div></div>
+            <div class="drawer-field"><div class="drawer-field-label">Medical Clearance</div><div class="drawer-field-value" style="color:var(--teal)">📄 Submitted</div></div>
+            <div class="drawer-field"><div class="drawer-field-label">MOA</div><div class="drawer-field-value" style="color:var(--gray-500);font-style:italic">Pending signature</div></div>
+        </div>
+    `;
+            document.getElementById('drawerFooter').innerHTML = a.status === 'pending'
+                ? `<button class="btn-primary" onclick="setStatus('${a.id}','approved'); closeDrawer()">✓ Approve</button>
+           <button class="btn-danger" onclick="setStatus('${a.id}','rejected'); closeDrawer()">✕ Reject</button>`
+                : `<button class="btn-secondary" style="flex:1;padding:.75rem;text-align:center;border-radius:8px;" onclick="closeDrawer()">Close</button>`;
+            document.getElementById('drawerOverlay').classList.add('open');
+            document.getElementById('drawer').classList.add('open');
+        }
+        function closeDrawer() {
+            document.getElementById('drawerOverlay').classList.remove('open');
+            document.getElementById('drawer').classList.remove('open');
+        }
+
+        /* Toast */
+        function showToast(color, msg) {
+            const t = document.getElementById('toast');
+            document.getElementById('toastDot').style.background = color;
+            document.getElementById('toastMsg').textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        // Init
+        renderTable();
+    </script>
+</body>
+
+</html>
