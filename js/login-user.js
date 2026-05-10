@@ -23,7 +23,15 @@ loginForm.addEventListener("submit", async (e) => {
     loginButton.innerHTML = "<span>✓ Success!</span>";
 
     setTimeout(() => {
-      window.location.href = "/pages/student/dashboard.html";
+      // Redirect based on email domain
+      if (email.endsWith("@gmail.com")) {
+        window.location.href = "/pages/admin/admin_dashboard.html";
+      } else if (email.endsWith("@pampangastateu.edu.ph")) {
+        window.location.href = "/pages/student/dashboard.html";
+      } else {
+        // Default fallback if domain doesn't match
+        window.location.href = "/pages/student/dashboard.html";
+      }
     }, 1000);
   } catch (error) {
     loginButton.classList.remove("loading");
