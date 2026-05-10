@@ -156,12 +156,13 @@ signupForm.addEventListener("submit", async(e) => {
         // COLLECTION: student
         // =========================
 
-        const docId = `${firstName}_${lastName}`.replace(/\s+/g, "_").toLowerCase();
+        let docId = `${firstName}_${lastName}`.trim().replace(/\s+/g, "_").toLowerCase();
 
-        const fullDocId = `${firstName}_${middleName}_${lastName}`
-        .replace(/\s+/g, "_")
-        .toLowerCase();
-        await setDoc(doc(db, "student", user.fullDocId), {
+        if (!firstName || !lastName) {
+        docId = user.uid;
+        }
+
+        await setDoc(doc(db, "student", docId), {
             uid: user.uid,
 
             // PERSONAL INFO
