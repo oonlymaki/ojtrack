@@ -155,7 +155,13 @@ signupForm.addEventListener("submit", async(e) => {
         // FIRESTORE DATABASE
         // COLLECTION: student
         // =========================
-        await setDoc(doc(db, "student", user.uid), {
+
+        const docId = `${firstName}_${lastName}`.replace(/\s+/g, "_").toLowerCase();
+
+        const fullDocId = `${firstName}_${middleName}_${lastName}`
+        .replace(/\s+/g, "_")
+        .toLowerCase();
+        await setDoc(doc(db, "student", user.fullDocId), {
             uid: user.uid,
 
             // PERSONAL INFO
