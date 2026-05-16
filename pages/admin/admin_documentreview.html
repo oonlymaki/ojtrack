@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LGU OJT Portal | Document Review</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>BFP OJT Portal | Document Review</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="/css/admin_documentreview.css">
 </head>
 
@@ -14,7 +16,9 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <div class="logo-badge">LGU</div>
+            <div class="logo-badge">
+                <img src="/assets/images/BFP.jpg" alt="BFP Logo">
+            </div>
             <div class="sidebar-logo-text">
                 <span class="portal-name">OJT Portal</span>
                 <span class="admin-pill">Admin</span>
@@ -24,68 +28,79 @@
         <nav class="sidebar-nav">
             <div class="sidebar-section-label">Overview</div>
             <a class="nav-item" href="/pages/admin/admin_dashboard.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                        d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 9 12 2 21 9" />
+                    <path d="M9 22V12h6v10" />
+                    <path d="M3 9v13h18V9" />
                 </svg> Dashboard
             </a>
+
             <div class="sidebar-section-label">Management</div>
             <a class="nav-item" href="/pages/admin/admin_applicants.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                        d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg> Applicants
-                <span class="nav-badge">12</span>
-            </a>
-            <a class="nav-item" href="admin_monitoring.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd" />
-                </svg> Intern Monitoring
+                <span class="nav-badge" id="sidebarBadge"></span>
             </a>
             <a class="nav-item active" href="/pages/admin/admin_documentreview.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
-                        clip-rule="evenodd" />
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+                    <rect x="9" y="3" width="6" height="4" rx="1" />
+                    <line x1="9" y1="12" x2="15" y2="12" />
+                    <line x1="9" y1="16" x2="13" y2="16" />
                 </svg> Document Review
+                <span class="nav-badge doc-badge"></span>
             </a>
-            <a class="nav-item" href="admin_attendance.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clip-rule="evenodd" />
-                </svg> Attendance Logs
-            </a>
-            <div class="sidebar-divider"></div>
             <div class="sidebar-section-label">Content</div>
             <a class="nav-item" href="/pages/admin/admin_announcements.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                        clip-rule="evenodd" />
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
                 </svg> Announcements
             </a>
-            <a class="nav-item" href="admin_analytics.html">
-                <svg class="nav-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a１ １ ０ ０１１ １v１２a１ １ ０ ０１－１ １h－２a１ １ ０ ０１－１－１V４z" />
+            <a class="nav-item" href="/pages/admin/admin_analytics.html">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
                 </svg> Analytics
             </a>
         </nav>
 
         <div class="sidebar-footer">
             <div class="admin-profile">
-                <div class="admin-avatar">MA</div>
+                <div class="admin-avatar"></div>
                 <div class="admin-info">
-                    <div class="admin-name">Maria Aquino</div>
-                    <div class="admin-role">HRMO Administrator</div>
+                    <div class="admin-name"></div>
+                    <div class="admin-role">BFP - San Simon Officer</div>
                 </div>
             </div>
-            <button class="logout-btn" onclick="window.location='/pages/index.html'">← Log out</button>
+            <button class="logout-btn" id="logoutBtn">← Log out</button>
         </div>
     </aside>
-
+    <div id="logoutModal"
+        style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:9999;">
+        <div
+            style="background:white;padding:24px;border-radius:16px;width:320px;box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+            <h3 style="margin:0 0 8px;font-family:'Sora',sans-serif;font-size:16px;color:#1f2d3d;">Log out</h3>
+            <p style="margin:0 0 20px;font-size:14px;color:#666;">Are you sure you want to log out?</p>
+            <div style="display:flex;justify-content:flex-end;gap:10px;">
+                <button id="cancelLogout"
+                    style="padding:8px 14px;border-radius:10px;border:none;background:#eee;cursor:pointer;font-weight:600;">Cancel</button>
+                <button id="confirmLogout"
+                    style="padding:8px 14px;border-radius:10px;border:none;background:#1a7f72;color:white;cursor:pointer;font-weight:600;">Log
+                    out</button>
+            </div>
+        </div>
+    </div>
     <!-- MAIN -->
     <main class="main">
 
@@ -95,9 +110,7 @@
                 <p class="page-label">Admin Control Panel</p>
                 <h1 class="page-title">Document Review</h1>
             </div>
-            <div class="header-right">
-                <button class="btn-primary" onclick="exportCSV()">↓ Export Report</button>
-            </div>
+
         </div>
 
         <!-- Stat Cards -->
@@ -143,42 +156,48 @@
                     </div>
                 </div>
                 <div class="stat-card-value" id="stat-approved">—</div>
-                <div class="stat-card-sub"><span class="stat-delta delta-up" id="stat-approved-pct">—</span> of submitted
+                <div class="stat-card-sub"><span class="stat-delta delta-up" id="stat-approved-pct">—</span> of
+                    submitted
                 </div>
             </div>
-            <div class="stat-card navy">
+
+            <div class="stat-card blue">
                 <div class="stat-card-top">
-                    <div class="stat-card-label">Complete Submissions</div>
-                    <div class="stat-icon navy">
-                        <svg viewBox="0 0 20 20" fill="#1c2a3a">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                    <div class="stat-card-label">For Submission</div>
+                    <div class="stat-icon blue">
+                        <svg viewBox="0 0 20 20" fill="#1d4ed8">
                             <path fill-rule="evenodd"
-                                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"
                                 clip-rule="evenodd" />
                         </svg>
                     </div>
                 </div>
-                <div class="stat-card-value" id="stat-complete">—</div>
-                <div class="stat-card-sub">all 3 docs approved</div>
+                <div class="stat-card-value" id="stat-for-submission">—</div>
+                <div class="stat-card-sub">Awaiting physical submission</div>
             </div>
+
         </div>
 
-        <!-- Filter Tabs -->
+        </div>
+
         <div class="filter-tabs">
-            <button class="filter-tab active" data-filter="all" onclick="setFilter('all', this)">
+            <button class="filter-tab active" onclick="setFilter('all', this)">
                 All Students <span class="tab-count" id="tab-all">0</span>
             </button>
-            <button class="filter-tab" data-filter="pending" onclick="setFilter('pending', this)">
-                Has Pending <span class="tab-count" id="tab-pending">0</span>
+
+            <button class="filter-tab" onclick="setFilter('pending', this)">
+                Pending <span class="tab-count" id="tab-pending">0</span>
             </button>
-            <button class="filter-tab" data-filter="rejected" onclick="setFilter('rejected', this)">
-                Has Rejected <span class="tab-count" id="tab-rejected">0</span>
+
+            <button class="filter-tab" onclick="setFilter('approved', this)">
+                Approved <span class="tab-count" id="tab-approved">0</span>
             </button>
-            <button class="filter-tab" data-filter="complete" onclick="setFilter('complete', this)">
-                Complete <span class="tab-count" id="tab-complete">0</span>
+
+            <button class="filter-tab" onclick="setFilter('for_submission', this)">
+                For Submission <span class="tab-count" id="tab-for-submission">0</span>
             </button>
-            <button class="filter-tab" data-filter="missing" onclick="setFilter('missing', this)">
-                Missing Docs <span class="tab-count" id="tab-missing">0</span>
+            <button class="filter-tab" onclick="setFilter('rejected', this)">
+                Rejected <span class="tab-count" id="tab-rejected">0</span>
             </button>
         </div>
 
@@ -190,21 +209,18 @@
                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                         clip-rule="evenodd" />
                 </svg>
-                <input class="search-input" type="text" placeholder="Search by name or school…" id="searchInput" oninput="renderCards()" />
+                <input class="search-input" type="text" placeholder="Search by name or school…" id="searchInput"
+                    oninput="renderCards()" />
             </div>
             <select class="filter-select" id="deptFilter" onchange="renderCards()">
-                <option value="">All Departments</option>
-                <option>HRMO</option>
-                <option>Mayor's Office</option>
-                <option>Internship Desk</option>
-                <option>Legal Office</option>
-                <option>Engineering Office</option>
+                <option>Bureau of Fire Protection - San Simon</option>
             </select>
             <select class="filter-select" id="docTypeFilter" onchange="renderCards()">
                 <option value="">All Doc Types</option>
-                <option>Endorsement Letter</option>
-                <option>Medical Clearance</option>
+                <option>Valid ID</option>
+                <option>Medical Certificate</option>
                 <option>MOA</option>
+                <option>Resume</option>
             </select>
             <span class="toolbar-count" id="rowCount">Showing 0 students</span>
         </div>
@@ -239,774 +255,10 @@
     <!-- Toast container -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <script>
-        // ── DATA ──
-        const COLORS = ['#1a7f72', '#c8902a', '#3b6ea5', '#8e44ad', '#c0392b', '#2e86c1', '#1e8449', '#d35400'];
-        const DOC_TYPES = ['Endorsement Letter', 'Medical Clearance', 'MOA'];
-        const DOC_ICONS = {
-            'Endorsement Letter': `<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>`,
-            'Medical Clearance': `<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z" clip-rule="evenodd"/></svg>`,
-            'MOA': `<svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>`
-        };
 
-        const STUDENTS_RAW = [{
-            id: 'STU-001',
-            name: 'Ana Reyes',
-            initials: 'AR',
-            school: 'CSPC – San Fernando',
-            course: 'BS Computer Science',
-            dept: 'HRMO',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_AReyes.pdf',
-                    submitted: 'May 4, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'approved',
-                    file: 'medical_AReyes.pdf',
-                    submitted: 'May 4, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'pending',
-                    file: 'moa_AReyes.pdf',
-                    submitted: 'May 4, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-002',
-            name: 'Carlo Mendoza',
-            initials: 'CM',
-            school: 'PLSan Fernando',
-            course: 'BS Public Administration',
-            dept: 'Mayor\'s Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_CMendoza.pdf',
-                    file: 'endorsement_CMendoza.pdf',
-                    submitted: 'May 3, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'pending',
-                    file: 'medical_CMendoza.pdf',
-                    submitted: 'May 3, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'missing',
-                    file: null,
-                    submitted: null,
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-003',
-            name: 'Sofia Domingo',
-            initials: 'SD',
-            school: 'Don Honorio Ventura SU',
-            course: 'BS Accountancy',
-            dept: 'HRMO',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_SDomingo.pdf',
-                    submitted: 'May 2, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'approved',
-                    file: 'medical_SDomingo.pdf',
-                    submitted: 'May 2, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'approved',
-                    file: 'moa_SDomingo.pdf',
-                    submitted: 'May 2, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-004',
-            name: 'Mark Santos',
-            initials: 'MS',
-            school: 'Pampanga State Agricultural',
-            course: 'BS Information Technology',
-            dept: 'Mayor\'s Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_MSantos.pdf',
-                    submitted: 'Apr 30, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'rejected',
-                    file: 'medical_MSantos.pdf',
-                    submitted: 'Apr 30, 2026',
-                    note: 'Document is blurry and unreadable. Please resubmit a clearer scan.'
-                },
-                'MOA': {
-                    status: 'approved',
-                    file: 'moa_MSantos.pdf',
-                    submitted: 'Apr 30, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-005',
-            name: 'Jerome Bautista',
-            initials: 'JB',
-            school: 'Holy Angel University',
-            course: 'BS Business Administration',
-            dept: 'Legal Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'pending',
-                    file: 'endorsement_JBautista.pdf',
-                    submitted: 'Apr 27, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'pending',
-                    file: 'medical_JBautista.pdf',
-                    submitted: 'Apr 27, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'pending',
-                    file: 'moa_JBautista.pdf',
-                    submitted: 'Apr 27, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-006',
-            name: 'Maria Villanueva',
-            initials: 'MV',
-            school: 'University of the Philippines',
-            course: 'BS Civil Engineering',
-            dept: 'Engineering Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_MVillanueva.pdf',
-                    submitted: 'Apr 25, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'approved',
-                    file: 'medical_MVillanueva.pdf',
-                    submitted: 'Apr 25, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'approved',
-                    file: 'moa_MVillanueva.pdf',
-                    submitted: 'Apr 25, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-007',
-            name: 'Renz Dela Cruz',
-            initials: 'RD',
-            school: 'CSPC – San Fernando',
-            course: 'BS Computer Science',
-            dept: 'HRMO',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_RDelaCruz.pdf',
-                    submitted: 'Apr 24, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'missing',
-                    file: null,
-                    submitted: null,
-                    note: ''
-                },
-                'MOA': {
-                    status: 'pending',
-                    file: 'moa_RDelaCruz.pdf',
-                    submitted: 'Apr 24, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-008',
-            name: 'Pia Gonzales',
-            initials: 'PG',
-            school: 'PLSan Fernando',
-            course: 'BS Accountancy',
-            dept: 'Internship Desk',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_PGonzales.pdf',
-                    submitted: 'Apr 22, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'approved',
-                    file: 'medical_PGonzales.pdf',
-                    submitted: 'Apr 22, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'approved',
-                    file: 'moa_PGonzales.pdf',
-                    submitted: 'Apr 22, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-009',
-            name: 'Kevin Reyes',
-            initials: 'KR',
-            school: 'Don Honorio Ventura SU',
-            course: 'BS Information Technology',
-            dept: 'Legal Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'rejected',
-                    file: 'endorsement_KReyes.pdf',
-                    submitted: 'Apr 20, 2026',
-                    note: 'Signature of school registrar is missing.'
-                },
-                'Medical Clearance': {
-                    status: 'approved',
-                    file: 'medical_KReyes.pdf',
-                    submitted: 'Apr 20, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'pending',
-                    file: 'moa_KReyes.pdf',
-                    submitted: 'Apr 20, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-010',
-            name: 'Tricia Lopez',
-            initials: 'TL',
-            school: 'Holy Angel University',
-            course: 'BS Public Administration',
-            dept: 'Mayor\'s Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_TLopez.pdf',
-                    submitted: 'Apr 19, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'approved',
-                    file: 'medical_TLopez.pdf',
-                    submitted: 'Apr 19, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'approved',
-                    file: 'moa_TLopez.pdf',
-                    submitted: 'Apr 19, 2026',
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-011',
-            name: 'Nikki Pascual',
-            initials: 'NP',
-            school: 'NEUST – San Isidro',
-            course: 'BS Computer Science',
-            dept: 'Internship Desk',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'missing',
-                    file: null,
-                    submitted: null,
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'missing',
-                    file: null,
-                    submitted: null,
-                    note: ''
-                },
-                'MOA': {
-                    status: 'missing',
-                    file: null,
-                    submitted: null,
-                    note: ''
-                }
-            }
-        }, {
-            id: 'STU-012',
-            name: 'Alyssa Buenaventura',
-            initials: 'AB',
-            school: 'CSPC – San Fernando',
-            course: 'BS Information Technology',
-            dept: 'Legal Office',
-            docs: {
-                'Endorsement Letter': {
-                    status: 'approved',
-                    file: 'endorsement_ABuenaventura.pdf',
-                    submitted: 'Mar 27, 2026',
-                    note: ''
-                },
-                'Medical Clearance': {
-                    status: 'pending',
-                    file: 'medical_ABuenaventura.pdf',
-                    submitted: 'Mar 27, 2026',
-                    note: ''
-                },
-                'MOA': {
-                    status: 'approved',
-                    file: 'moa_ABuenaventura.pdf',
-                    submitted: 'Mar 27, 2026',
-                    note: ''
-                }
-            }
-        }, ];
-
-        let data = STUDENTS_RAW.map((s, i) => ({...s,
-            color: COLORS[i % COLORS.length]
-        }));
-        let activeFilter = 'all';
-
-        // ── HELPERS ──
-        function getOverall(docs) {
-            const vals = Object.values(docs).map(d => d.status);
-            if (vals.every(v => v === 'approved')) return 'complete';
-            if (vals.some(v => v === 'rejected')) return 'flagged';
-            if (vals.every(v => v === 'missing')) return 'missing';
-            if (vals.some(v => v === 'pending' || v === 'missing')) return 'incomplete';
-            return 'incomplete';
-        }
-
-        function statusCounts(docs) {
-            const v = Object.values(docs).map(d => d.status);
-            return {
-                approved: v.filter(s => s === 'approved').length,
-                pending: v.filter(s => s === 'pending').length,
-                rejected: v.filter(s => s === 'rejected').length,
-                missing: v.filter(s => s === 'missing').length,
-            };
-        }
-
-        function badgeHTML(status) {
-            const map = {
-                pending: ['badge-pending', 'Pending'],
-                approved: ['badge-approved', 'Approved'],
-                rejected: ['badge-rejected', 'Rejected'],
-                missing: ['badge-missing', 'Not Submitted'],
-            };
-            const [cls, label] = map[status] || ['badge-missing', 'Unknown'];
-            return `<span class="badge ${cls}"><span class="badge-dot"></span>${label}</span>`;
-        }
-
-        function overallBadgeHTML(overall) {
-            const map = {
-                complete: ['complete', '✓ Complete'],
-                flagged: ['flagged', '✗ Has Rejected'],
-                incomplete: ['incomplete', '⏳ Incomplete'],
-                missing: ['incomplete', '⚠ No Docs'],
-            };
-            const [cls, label] = map[overall] || ['pending', 'Unknown'];
-            return `<span class="overall-badge ${cls}">${label}</span>`;
-        }
-
-        // ── RENDER ──
-        function getFiltered() {
-            const q = document.getElementById('searchInput').value.toLowerCase();
-            const dept = document.getElementById('deptFilter').value;
-            const docT = document.getElementById('docTypeFilter').value;
-
-            return data.filter(s => {
-                if (q && !s.name.toLowerCase().includes(q) && !s.school.toLowerCase().includes(q)) return false;
-                if (dept && s.dept !== dept) return false;
-
-                const overall = getOverall(s.docs);
-
-                if (docT) {
-                    const docStatus = s.docs[docT] ? .status;
-                    if (activeFilter === 'pending' && docStatus !== 'pending') return false;
-                    if (activeFilter === 'rejected' && docStatus !== 'rejected') return false;
-                } else {
-                    const counts = statusCounts(s.docs);
-                    if (activeFilter === 'pending' && counts.pending === 0) return false;
-                    if (activeFilter === 'rejected' && counts.rejected === 0) return false;
-                    if (activeFilter === 'complete' && overall !== 'complete') return false;
-                    if (activeFilter === 'missing' && counts.missing === 0) return false;
-                }
-
-                return true;
-            });
-        }
-
-        function updateStats() {
-            let total = 0,
-                pending = 0,
-                approved = 0,
-                complete = 0;
-            data.forEach(s => {
-                Object.values(s.docs).forEach(d => {
-                    if (d.status !== 'missing') total++;
-                    if (d.status === 'pending') pending++;
-                    if (d.status === 'approved') approved++;
-                });
-                if (getOverall(s.docs) === 'complete') complete++;
-            });
-            document.getElementById('stat-total').textContent = total;
-            document.getElementById('stat-pending').textContent = pending;
-            document.getElementById('stat-approved').textContent = approved;
-            document.getElementById('stat-complete').textContent = complete;
-            document.getElementById('stat-approved-pct').textContent =
-                total > 0 ? Math.round(approved / total * 100) + '%' : '0%';
-
-            // Tab counts
-            const tabAll = data.length;
-            const tabPending = data.filter(s => statusCounts(s.docs).pending > 0).length;
-            const tabRejected = data.filter(s => statusCounts(s.docs).rejected > 0).length;
-            const tabComplete = data.filter(s => getOverall(s.docs) === 'complete').length;
-            const tabMissing = data.filter(s => statusCounts(s.docs).missing > 0).length;
-            document.getElementById('tab-all').textContent = tabAll;
-            document.getElementById('tab-pending').textContent = tabPending;
-            document.getElementById('tab-rejected').textContent = tabRejected;
-            document.getElementById('tab-complete').textContent = tabComplete;
-            document.getElementById('tab-missing').textContent = tabMissing;
-        }
-
-        function renderCards() {
-            const filtered = getFiltered();
-            const list = document.getElementById('studentsList');
-            const empty = document.getElementById('emptyState');
-
-            document.getElementById('rowCount').textContent =
-                `Showing ${filtered.length} student${filtered.length !== 1 ? 's' : ''}`;
-
-            if (filtered.length === 0) {
-                list.innerHTML = '';
-                empty.classList.add('visible');
-                return;
-            }
-
-            empty.classList.remove('visible');
-
-            list.innerHTML = filtered.map(s => {
-                        const counts = statusCounts(s.docs);
-                        const overall = getOverall(s.docs);
-
-                        const docSummaryParts = [];
-                        if (counts.approved) docSummaryParts.push(`<span class="doc-mini-badge approved">${counts.approved} approved</span>`);
-                        if (counts.pending) docSummaryParts.push(`<span class="doc-mini-badge pending">${counts.pending} pending</span>`);
-                        if (counts.rejected) docSummaryParts.push(`<span class="doc-mini-badge rejected">${counts.rejected} rejected</span>`);
-                        if (counts.missing) docSummaryParts.push(`<span class="doc-mini-badge missing">${counts.missing} missing</span>`);
-
-                        const docRows = DOC_TYPES.map(dtype => {
-                                    const doc = s.docs[dtype];
-                                    const hasFile = doc.status !== 'missing';
-                                    const iconCls = hasFile ? 'has-file' : '';
-
-                                    const noteVisible = doc.note ? 'visible' : '';
-
-                                    let actions = '';
-                                    if (doc.status === 'pending') {
-                                        actions = `
-                            <button class="act-btn btn-view"    onclick="previewDoc('${s.id}','${dtype}')">Preview</button>
-                            <button class="act-btn btn-approve" onclick="setDocStatus('${s.id}','${dtype}','approved')">Approve</button>
-                            <button class="act-btn btn-reject"  onclick="setDocStatus('${s.id}','${dtype}','rejected')">Reject</button>
-                            <button class="act-btn btn-note"    onclick="toggleNote('${s.id}','${dtype}')">Note</button>
-                        `;
-                                    } else if (doc.status === 'rejected') {
-                                        actions = `
-                            <button class="act-btn btn-view"    onclick="previewDoc('${s.id}','${dtype}')">Preview</button>
-                            <button class="act-btn btn-approve" onclick="setDocStatus('${s.id}','${dtype}','approved')">Re-approve</button>
-                            <button class="act-btn btn-note"    onclick="toggleNote('${s.id}','${dtype}')">Edit Note</button>
-                        `;
-                                    } else if (doc.status === 'approved') {
-                                        actions = `
-                            <button class="act-btn btn-view"    onclick="previewDoc('${s.id}','${dtype}')">Preview</button>
-                            <button class="act-btn btn-reject"  onclick="setDocStatus('${s.id}','${dtype}','rejected')">Revoke</button>
-                        `;
-                                    } else {
-                                        actions = `<span style="font-size:.78rem;color:var(--gray-300)">Not submitted</span>`;
-                                    }
-
-                                    return `
-                        <div class="doc-row" id="docrow-${s.id}-${dtype.replace(/\s+/g, '-')}">
-                            <div class="doc-icon ${iconCls}">${DOC_ICONS[dtype]}</div>
-                            <div class="doc-details">
-                                <div class="doc-type">${dtype}</div>
-                                ${hasFile
-                            ? `<a class="doc-filename" onclick="previewDoc('${s.id}','${dtype}')">${doc.file}</a>`
-                            : `<span class="doc-filename no-file">No file uploaded</span>`
-                        }
-                                ${doc.submitted ? `<div class="doc-submitted">Submitted ${doc.submitted}</div>` : ''}
-                                <div class="note-inline" id="note-${s.id}-${dtype.replace(/\s+/g, '-')}">
-                                    <input class="note-input" type="text" placeholder="Add rejection note…"
-                                        id="note-input-${s.id}-${dtype.replace(/\s+/g, '-')}"
-                                        value="${doc.note}" />
-                                    <button class="note-save" onclick="saveNote('${s.id}','${dtype}')">Save</button>
-                                </div>
-                                <div class="doc-note-text ${noteVisible}" id="notetext-${s.id}-${dtype.replace(/\s+/g, '-')}">
-                                    ${doc.note ? '📝 ' + doc.note : ''}
-                                </div>
-                            </div>
-                            <div class="doc-status-wrap">
-                                <div id="badge-${s.id}-${dtype.replace(/\s+/g, '-')}">${badgeHTML(doc.status)}</div>
-                            </div>
-                            <div class="doc-actions" id="actions-${s.id}-${dtype.replace(/\s+/g, '-')}">
-                                ${actions}
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-                return `
-                    <div class="student-card" id="card-${s.id}">
-                        <div class="student-card-header" onclick="toggleCard('${s.id}')">
-                            <div class="student-avatar" style="background:${s.color}">${s.initials}</div>
-                            <div class="student-info">
-                                <div class="student-name">${s.name}</div>
-                                <div class="student-meta">
-                                    <span>${s.school}</span>
-                                    <span>${s.course}</span>
-                                    <span>${s.dept}</span>
-                                </div>
-                            </div>
-                            <div class="doc-summary">
-                                ${docSummaryParts.join('')}
-                                ${overallBadgeHTML(overall)}
-                            </div>
-                            <button class="act-btn btn-note" style="margin-left:.25rem;font-size:.78rem;color:var(--gray-500)"
-                                onclick="event.stopPropagation();openDrawer('${s.id}')">Details</button>
-                            <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <div class="doc-rows">${docRows}</div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // ── ACTIONS ──
-        function toggleCard(id) {
-            document.getElementById('card-' + id).classList.toggle('expanded');
-        }
-
-        function setDocStatus(studentId, docType, newStatus) {
-            const student = data.find(s => s.id === studentId);
-            if (!student) return;
-            student.docs[docType].status = newStatus;
-
-            const key = docType.replace(/\s+/g, '-');
-            const badgeEl = document.getElementById(`badge-${studentId}-${key}`);
-            const actionsEl = document.getElementById(`actions-${studentId}-${key}`);
-
-            if (badgeEl) badgeEl.innerHTML = badgeHTML(newStatus);
-
-            if (actionsEl) {
-                if (newStatus === 'approved') {
-                    actionsEl.innerHTML = `
-                        <button class="act-btn btn-view"   onclick="previewDoc('${studentId}','${docType}')">Preview</button>
-                        <button class="act-btn btn-reject" onclick="setDocStatus('${studentId}','${docType}','rejected')">Revoke</button>
-                    `;
-                } else {
-                    actionsEl.innerHTML = `
-                        <button class="act-btn btn-view"    onclick="previewDoc('${studentId}','${docType}')">Preview</button>
-                        <button class="act-btn btn-approve" onclick="setDocStatus('${studentId}','${docType}','approved')">Re-approve</button>
-                        <button class="act-btn btn-note"    onclick="toggleNote('${studentId}','${docType}')">Edit Note</button>
-                    `;
-                }
-            }
-
-            // Update header summary badges
-            updateCardHeader(studentId);
-            updateStats();
-
-            showToast(
-                newStatus === 'approved'
-                    ? `${docType} approved for ${student.name}`
-                    : `${docType} rejected for ${student.name}`,
-                newStatus === 'approved' ? 'success' : 'reject'
-            );
-        }
-
-        function updateCardHeader(studentId) {
-            const student = data.find(s => s.id === studentId);
-            if (!student) return;
-            const card = document.getElementById('card-' + studentId);
-            if (!card) return;
-            const header = card.querySelector('.student-card-header');
-            const summary = header.querySelector('.doc-summary');
-            const counts = statusCounts(student.docs);
-            const overall = getOverall(student.docs);
-            const parts = [];
-            if (counts.approved) parts.push(`<span class="doc-mini-badge approved">${counts.approved} approved</span>`);
-            if (counts.pending) parts.push(`<span class="doc-mini-badge pending">${counts.pending} pending</span>`);
-            if (counts.rejected) parts.push(`<span class="doc-mini-badge rejected">${counts.rejected} rejected</span>`);
-            if (counts.missing) parts.push(`<span class="doc-mini-badge missing">${counts.missing} missing</span>`);
-            summary.innerHTML = parts.join('') + overallBadgeHTML(overall);
-        }
-
-        function toggleNote(studentId, docType) {
-            const key = docType.replace(/\s+/g, '-');
-            const el = document.getElementById(`note-${studentId}-${key}`);
-            if (el) el.classList.toggle('open');
-        }
-
-        function saveNote(studentId, docType) {
-            const key = docType.replace(/\s+/g, '-');
-            const inputEl = document.getElementById(`note-input-${studentId}-${key}`);
-            const noteTextEl = document.getElementById(`notetext-${studentId}-${key}`);
-            const noteEl = document.getElementById(`note-${studentId}-${key}`);
-            if (!inputEl) return;
-            const val = inputEl.value.trim();
-            const student = data.find(s => s.id === studentId);
-            if (student) student.docs[docType].note = val;
-            if (noteTextEl) {
-                noteTextEl.textContent = val ? '📝 ' + val : '';
-                noteTextEl.classList.toggle('visible', !!val);
-            }
-            if (noteEl) noteEl.classList.remove('open');
-            if (val) showToast('Note saved', 'note');
-        }
-
-        function previewDoc(studentId, docType) {
-            const student = data.find(s => s.id === studentId);
-            if (!student) return;
-            const doc = student.docs[docType];
-            showToast(`Preview: ${doc.file || 'No file'}`, 'note');
-        }
-
-        function setFilter(f, el) {
-            activeFilter = f;
-            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-            renderCards();
-        }
-
-        // ── DRAWER ──
-        function openDrawer(studentId) {
-            const s = data.find(s => s.id === studentId);
-            if (!s) return;
-            const counts = statusCounts(s.docs);
-            const overall = getOverall(s.docs);
-
-            const docItems = DOC_TYPES.map(dtype => {
-                const doc = s.docs[dtype];
-                const hasFiled = doc.status !== 'missing';
-                return `
-                    <div class="drawer-doc-item">
-                        <div class="drawer-doc-icon ${hasFiled ? 'filed' : 'unfiled'}">
-                            ${DOC_ICONS[dtype]}
-                        </div>
-                        <div class="drawer-doc-name">${dtype}</div>
-                        ${badgeHTML(doc.status)}
-                    </div>
-                `;
-            }).join('');
-
-            document.getElementById('drawerBody').innerHTML = `
-                <div class="drawer-student-row">
-                    <div class="drawer-avatar" style="background:${s.color}">${s.initials}</div>
-                    <div>
-                        <div class="drawer-student-name">${s.name}</div>
-                        <div class="drawer-student-sub">${s.course}</div>
-                    </div>
-                </div>
-                <div class="drawer-section">
-                    <div class="drawer-section-label">Student Info</div>
-                    <div class="drawer-field"><span class="drawer-field-label">Student ID</span><span class="drawer-field-value">${s.id}</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">School</span><span class="drawer-field-value">${s.school}</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">Course</span><span class="drawer-field-value">${s.course}</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">Department</span><span class="drawer-field-value">${s.dept}</span></div>
-                </div>
-                <div class="drawer-divider"></div>
-                <div class="drawer-section">
-                    <div class="drawer-section-label">Document Status</div>
-                    ${docItems}
-                </div>
-                <div class="drawer-divider"></div>
-                <div class="drawer-section">
-                    <div class="drawer-section-label">Summary</div>
-                    <div class="drawer-field"><span class="drawer-field-label">Overall</span><span class="drawer-field-value">${overallBadgeHTML(overall)}</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">Approved</span><span class="drawer-field-value">${counts.approved} / 3</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">Pending</span><span class="drawer-field-value">${counts.pending}</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">Rejected</span><span class="drawer-field-value">${counts.rejected}</span></div>
-                    <div class="drawer-field"><span class="drawer-field-label">Missing</span><span class="drawer-field-value">${counts.missing}</span></div>
-                </div>
-            `;
-
-            document.getElementById('drawerFooter').innerHTML = `
-                <button class="btn-outline" onclick="closeDrawer()">Close</button>
-                <button class="btn-primary" onclick="closeDrawer(); toggleCard('${s.id}'); document.getElementById('card-${s.id}').scrollIntoView({behavior:'smooth',block:'center'})">Review Documents</button>
-            `;
-
-            document.getElementById('drawer').classList.add('open');
-            document.getElementById('drawerOverlay').classList.add('open');
-        }
-
-        function closeDrawer() {
-            document.getElementById('drawer').classList.remove('open');
-            document.getElementById('drawerOverlay').classList.remove('open');
-        }
-
-        // ── TOAST ──
-        function showToast(msg, type = 'success') {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            toast.textContent = msg;
-            container.appendChild(toast);
-            setTimeout(() => toast.remove(), 1100);
-        }
-
-        // ── EXPORT ──
-        function exportCSV() {
-            const rows = [['Student ID', 'Name', 'School', 'Course', 'Department',
-                'Endorsement Letter', 'Medical Clearance', 'MOA', 'Overall']];
-            data.forEach(s => {
-                rows.push([
-                    s.id, s.name, s.school, s.course, s.dept,
-                    s.docs['Endorsement Letter'].status,
-                    s.docs['Medical Clearance'].status,
-                    s.docs['MOA'].status,
-                    getOverall(s.docs)
-                ]);
-            });
-            const csv = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n');
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
-            a.download = 'document_review_report.csv';
-            a.click();
-            showToast('CSV exported successfully', 'success');
-        }
-
-        // ── INIT ──
-        updateStats();
-        renderCards();
-
-        // Expand cards with rejections by default for visibility
-        data.forEach(s => {
-            if (statusCounts(s.docs).rejected > 0) {
-                setTimeout(() => {
-                    const card = document.getElementById('card-' + s.id);
-                    if (card) card.classList.add('expanded');
-                }, 400);
-            }
-        });
-    </script>
-
+    <script type="module" src="/js/admin_documentreview.js"></script>
+    <script type="module" src="/js/components/admin_badge_notifier.js"></script>
+    <script type="module" src="/js/admin_profile.js"></script>
 </body>
 
 </html>

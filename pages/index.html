@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LGU OJT Portal | Apply</title>
+  <title>BFP OJT Portal | Apply</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/index.css">
 </head>
@@ -13,27 +14,29 @@
     <div class="left">
       <div>
         <div class="left-logo">
-          <div class="logo-badge">LGU</div>
+          <div class="logo-badge">
+  <img src="/assets/images/BFP.jpg" alt="BFP Logo">
+</div>
           <span class="logo-name">OJT Portal</span>
         </div>
-        <div class="left-heading">Apply for OJT at San Fernando City</div>
+        <div class="left-heading">Bureau of Fire Protection OJT Application Portal</div>
         <div class="left-sub">Submit your application online and track your approval status in real time.</div>
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
-            <div class="step-text"><strong>Document Submission</strong> Endorsement letter, TOR, medical certificate &amp; more.</div>
+            <div class="step-text"><strong>Document Submission</strong> MOA, Resume, medical certificate &amp; more.</div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <div class="step-text"><strong>Verification &amp; Acceptance</strong> HR review, interview, and acceptance letter issuance.</div>
+            <div class="step-text"><strong>Verification &amp; Acceptance</strong>BFP Personnel review, interview, and acceptance letter issuance.</div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
-            <div class="step-text"><strong>MOA Processing</strong> School–LGU agreement signing and notarization.</div>
+            <div class="step-text"><strong>MOA Processing</strong> School–BFP agreement signing and notarization.</div>
           </div>
         </div>
       </div>
-      <div class="left-footer">© 2026 Local Government Unit · OJT Management System</div>
+      <div class="left-footer">© 2026 Bureau of Fire Protection · OJT Application Portal</div>
     </div>
 
     <!-- RIGHT -->
@@ -46,10 +49,39 @@
           <label class="form-label">Email address</label>
           <input id="email" class="form-input" type="email" placeholder="JuanDelaCruz@school.edu.ph" required />
         </div>
+<div class="form-group">
+  <label class="form-label">Password</label>
+
+  <div class="password-wrapper">
+    <input
+      id="password"
+      class="form-input password-input"
+      type="password"
+      placeholder="••••••••"
+      required
+    />
+
+    <button type="button" class="toggle-password" id="togglePassword">
+      <i class="fa-solid fa-eye"></i>
+    </button>
+  </div>
+</div>
         <div class="form-group">
-          <label class="form-label">Password</label>
-          <input id="password" class="form-input" type="password" placeholder="••••••••" required />
-        </div>
+  <label class="form-label">Verification Code</label>
+
+  <div class="captcha-box">
+    <span id="captchaText"></span>
+    <button type="button" id="refreshCaptcha">↻</button>
+  </div>
+
+  <input
+    id="captchaInput"
+    class="form-input"
+    type="text"
+    placeholder="Enter verification code"
+    required
+  />
+</div>
         <button type="submit" class="btn-primary login-button">Sign in</button>
         <div id="loginError" class="error-message"></div>
       </form>

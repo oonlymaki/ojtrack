@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LGU OJT Portal | Register</title>
+    <title>BFP OJT Portal | Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
 
     <link rel="stylesheet" href="/css/register.css">
 </head>
@@ -14,7 +17,9 @@
 <body>
 
     <div class="top-bar">
-        <div class="logo-badge">LGU</div>
+        <div class="logo-badge">
+    <img src="/assets/images/BFP.jpg" alt="BFP Logo">
+</div>
         <span class="logo-name">OJT Portal</span>
         <a class="back-link" href="/pages/index.html">← Back to sign in</a>
     </div>
@@ -132,8 +137,8 @@
 
                                         <select id="sex" class="form-select">
                                             <option value="">Select</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
                                         </select>
 
                                     </div>
@@ -165,7 +170,8 @@
                                         Complete Address <span class="required">*</span>
                                     </label>
 
-                                    <input id="address" class="form-input" type="text" placeholder="House no., Street, Barangay, Municipality, Province" />
+                                    <input id="address" class="form-input" type="text"
+                                        placeholder="House no., Street, Barangay, Municipality, Province" />
 
                                 </div>
 
@@ -173,25 +179,36 @@
 
                             <div class="form-grid">
 
-                                <div class="form-group">
+<div class="form-group">
 
-                                    <label class="form-label">
-                                        Password <span class="required">*</span>
-                                    </label>
+    <label class="form-label">
+        Password <span class="required">*</span>
+    </label>
 
-                                    <input id="password" class="form-input" type="password" placeholder="Create a password" />
+    <div class="password-wrap">
+    <input id="password" class="form-input" type="password" placeholder="Create a password" />
 
-                                </div>
+    <button type="button" class="toggle-password" data-target="password">
+        <i class="ti ti-eye"></i>
+    </button>
+</div>
 
-                                <div class="form-group">
+</div>
+<div class="form-group">
 
-                                    <label class="form-label">
-                                        Confirm Password <span class="required">*</span>
-                                    </label>
+    <label class="form-label">
+        Confirm Password <span class="required">*</span>
+    </label>
 
-                                    <input id="confirmPassword" class="form-input" type="password" placeholder="Repeat password" />
+    <div class="password-wrap">
+    <input id="confirmPassword" class="form-input" type="password" placeholder="Repeat password" />
 
-                                </div>
+    <button type="button" class="toggle-password" data-target="confirmPassword">
+        <i class="ti ti-eye"></i>
+    </button>
+</div>
+
+</div>
 
                             </div>
 
@@ -226,7 +243,8 @@
                                         School / University <span class="required">*</span>
                                     </label>
 
-                                    <input id="school" class="form-input" type="text" value="Pampanga State University" />
+                                    <input id="school" class="form-input" type="text"
+                                        value="Pampanga State University" />
 
                                 </div>
 
@@ -250,7 +268,8 @@
                                         College / Department <span class="required">*</span>
                                     </label>
 
-                                    <input id="college" class="form-input" type="text" placeholder="e.g. College of Business" />
+                                    <input id="college" class="form-input" type="text"
+                                        placeholder="e.g. College of Business" />
 
                                 </div>
 
@@ -260,7 +279,8 @@
                                         Course / Program <span class="required">*</span>
                                     </label>
 
-                                    <input id="course" class="form-input" type="text" placeholder="e.g. BS Public Administration" />
+                                    <input id="course" class="form-input" type="text"
+                                        placeholder="e.g. BS Public Administration" />
 
                                 </div>
 
@@ -288,7 +308,8 @@
                                         Student ID Number <span class="required">*</span>
                                     </label>
 
-                                    <input id="studentId" class="form-input" type="text" placeholder="e.g. 2021-00123" />
+                                    <input id="studentId" class="form-input" type="text"
+                                        placeholder="e.g. 2021-00123" />
 
                                 </div>
 
@@ -298,7 +319,8 @@
                                         Academic Year & Semester <span class="required">*</span>
                                     </label>
 
-                                    <input id="academicYear" class="form-input" type="text" placeholder="e.g. 2025–2026, 2nd Sem" />
+                                    <input id="academicYear" class="form-input" type="text"
+                                        placeholder="e.g. 2025–2026, 2nd Sem" />
 
                                 </div>
 
@@ -350,7 +372,8 @@
                                         Adviser Name <span class="required">*</span>
                                     </label>
 
-                                    <input id="adviserName" class="form-input" type="text" placeholder="School OJT coordinator" />
+                                    <input id="adviserName" class="form-input" type="text"
+                                        placeholder="School OJT coordinator" />
 
                                 </div>
 
@@ -360,7 +383,8 @@
                                         Adviser Contact / Email
                                     </label>
 
-                                    <input id="adviserContact" class="form-input" type="text" placeholder="adviser@school.edu.ph" />
+                                    <input id="adviserContact" class="form-input" type="text"
+                                        placeholder="adviser@school.edu.ph" />
 
                                 </div>
 
@@ -399,42 +423,30 @@
 
                                 <div class="form-group">
                                     <label class="form-label">
-                                        School Endorsement Letter
+                                        Valid ID
                                     </label>
-
-                                    <input class="form-input" type="file" accept=".pdf,.jpg,.png" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">
-                                        Transcript of Records (TOR)
-                                    </label>
-
-                                    <input class="form-input" type="file" accept=".pdf,.jpg,.png" />
+                                    <input id="validIdFile" class="form-input" type="file" accept=".pdf,.jpg,.png" />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">
                                         Medical Certificate
                                     </label>
-
-                                    <input class="form-input" type="file" accept=".pdf,.jpg,.png" />
+                                    <input id="medicalFile" class="form-input" type="file" accept=".pdf,.jpg,.png" />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">
-                                        Valid ID
+                                        MOA
                                     </label>
-
-                                    <input class="form-input" type="file" accept=".pdf,.jpg,.png" />
+                                    <input id="moaFile" class="form-input" type="file" accept=".pdf,.jpg,.png" />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">
-                                        Resume / CV
+                                        Resume
                                     </label>
-
-                                    <input class="form-input" type="file" accept=".pdf,.jpg,.png" />
+                                    <input id="resumeFile" class="form-input" type="file" accept=".pdf,.jpg,.png" />
                                 </div>
 
                             </div>
@@ -466,24 +478,10 @@
 
                             <div class="dept-grid" id="deptGrid">
 
-                                <div class="dept-card selected" data-dept="HRMO">
-                                    <div class="dept-name">HRMO</div>
+                                <div class="dept-card selected" data-dept="Bureau of Fire Protection - San Simon">
+                                    <div class="dept-name">Bureau of Fire Protection</div>
                                     <div class="dept-desc">
-                                        Human Resource Management Office
-                                    </div>
-                                </div>
-
-                                <div class="dept-card" data-dept="Mayor's Office">
-                                    <div class="dept-name">Mayor's Office</div>
-                                    <div class="dept-desc">
-                                        Executive administrative support
-                                    </div>
-                                </div>
-
-                                <div class="dept-card" data-dept="Legal Office">
-                                    <div class="dept-name">Legal Office</div>
-                                    <div class="dept-desc">
-                                        Ordinances and compliance
+                                        San Simon Fire Station
                                     </div>
                                 </div>
 
@@ -541,7 +539,8 @@
                                         Additional Notes
                                     </label>
 
-                                    <textarea id="notes" class="form-input" style="resize:vertical;min-height:75px;" placeholder="Any notes for the HR department..."></textarea>
+                                    <textarea id="notes" class="form-input" style="resize:vertical;min-height:75px;"
+                                        placeholder="Any notes for the HR department..."></textarea>
 
                                 </div>
 
@@ -576,17 +575,18 @@
                                 Review your application before submitting.
                             </p>
 
-                            <div style="background:var(--teal-pale);border:1px solid rgba(26,127,114,.18);border-radius:8px;padding:.85rem 1rem;margin-bottom:1.4rem;font-size:.8rem;color:var(--teal);line-height:1.55;">
+                            <div
+                                style="background:var(--teal-pale);border:1px solid rgba(26,127,114,.18);border-radius:8px;padding:.85rem 1rem;margin-bottom:1.4rem;font-size:.8rem;color:var(--teal);line-height:1.55;">
                                 By submitting, you confirm that all information is accurate.
                             </div>
-
+                            <div id="reviewContainer" class="review-container"></div>
                             <div class="btn-row">
 
                                 <button type="button" class="btn-back" onclick="goBack()">
                                     ← Back
                                 </button>
 
-                                <button type="submit" class="btn-next" style="padding:.66rem 1.8rem;">
+                                <button id="submitBtn" type="submit" class="btn-next" style="padding:.66rem 1.8rem;">
                                     Submit Application ✓
                                 </button>
 
@@ -633,146 +633,41 @@
         </div>
 
     </div>
+    <div id="fileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePreview()">&times;</span>
 
-    <!-- REGISTER JS -->
+            <div id="filePreviewContainer"></div>
+        </div>
+    </div>
+    <div id="globalStatus" class="hidden status-overlay">
+        <div class="status-box">
+            <p id="statusText">Processing...</p>
+        </div>
+    </div>
     <script type="module" src="/js/signup.js"></script>
-
-    <!-- STEP SCRIPT -->
-    <script>
-        let currentStep = 1;
-        const totalSteps = 5;
-
-        const stepSubs = [
-            '',
-            'Step 1 of 5 — Fill out your personal details.',
-            'Step 2 of 5 — School & Course Details',
-            'Step 3 of 5 — Required Documents',
-            'Step 4 of 5 — Preferred Department',
-            'Step 5 of 5 — Review & Submit'
-        ];
-
-        function updateProgress(step) {
-
-            for (let i = 1; i <= totalSteps; i++) {
-
-                const c = document.getElementById('pc' + i);
-                const l = document.getElementById('pl' + i);
-
-                c.classList.remove('active', 'done');
-                l.classList.remove('active', 'done');
-
-                if (i < step) {
-
-                    c.classList.add('done');
-                    c.textContent = '✓';
-
-                    l.classList.add('done');
-
-                } else if (i === step) {
-
-                    c.classList.add('active');
-                    c.textContent = i;
-
-                    l.classList.add('active');
-
-                } else {
-
-                    c.textContent = i;
-
-                }
-
-                if (i < totalSteps) {
-
-                    document
-                        .getElementById('line' + i)
-                        .classList.toggle('done', i < step);
-
-                }
-            }
-
-            document.getElementById('formSub').textContent = stepSubs[step];
-        }
-
-        function updatePanel(step) {
-
-            for (let i = 1; i <= totalSteps; i++) {
-
-                document
-                    .getElementById('panel' + i)
-                    .classList.remove('visible');
-
-            }
-
-            document
-                .getElementById('panel' + step)
-                .classList.add('visible');
-        }
-
-        function animateSlide(from, to) {
-
-            document
-                .querySelectorAll('.form-slide')
-                .forEach(slide => {
-                    slide.classList.remove('active');
-                });
-
-            document
-                .getElementById('slide' + to)
-                .classList.add('active');
-        }
-
-        function goNext() {
-
-            if (currentStep >= totalSteps) return;
-
-            const from = currentStep;
-
-            currentStep++;
-
-            animateSlide(from, currentStep);
-
-            updateProgress(currentStep);
-            updatePanel(currentStep);
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        function goBack() {
-
-            if (currentStep <= 1) return;
-
-            const from = currentStep;
-
-            currentStep--;
-
-            animateSlide(from, currentStep);
-
-            updateProgress(currentStep);
-            updatePanel(currentStep);
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        document.querySelectorAll('.dept-card').forEach(card => {
-
-            card.addEventListener('click', function() {
-
-                document.querySelectorAll('.dept-card')
-                    .forEach(c => c.classList.remove('selected'));
-
-                this.classList.add('selected');
-
-            });
-
-        });
-    </script>
-
+    <div id="successModal"
+        style="display:none; position:fixed; inset:0; background:rgba(28,42,58,.55); z-index:9999; align-items:center; justify-content:center;">
+        <div
+            style="background:#fff; border-radius:16px; padding:2.5rem 2rem; max-width:380px; width:90%; text-align:center; box-shadow:0 8px 32px rgba(0,0,0,.15);">
+            <div
+                style="width:56px; height:56px; background:#e6f4f1; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem;">
+                <svg width="28" height="28" fill="none" stroke="#1a7f72" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+            </div>
+            <h2
+                style="font-family:'Sora',sans-serif; font-size:1.2rem; font-weight:700; color:#1c2a3a; margin-bottom:.6rem;">
+                Application Submitted!</h2>
+            <p style="font-size:.9rem; color:#7a8898; line-height:1.6; margin-bottom:1.75rem;">Log in to your account to
+                view your application status and track your progress.</p>
+            <button onclick="window.location.href='/pages/index.html'"
+                style="width:100%; padding:.85rem; background:#1a7f72; color:#fff; border:none; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:600; cursor:pointer;">Go
+                to Login</button>
+        </div>
+    </div>
 </body>
+<div id="notif-container" class="notif-container"></div>
 
 </html>
