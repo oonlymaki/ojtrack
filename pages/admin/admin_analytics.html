@@ -741,7 +741,7 @@
 
         /* ── AUTH ── */
         onAuthStateChanged(auth, user => {
-            if (!user) { window.location.href = '/pages/index.html'; return; }
+            if (!user) { window.location.href = '/OJTrack/index.html'; return; }
             const initial = (user.displayName || user.email || 'A')[0].toUpperCase();
             document.getElementById('adminAvatar').textContent = initial;
             document.getElementById('adminName').textContent = user.displayName || user.email;
@@ -755,7 +755,7 @@
         });
         document.getElementById('confirmLogout').addEventListener('click', async () => {
             await signOut(auth);
-            window.location.href = '/pages/index.html';
+            window.location.href = '/OJTrack/index.html';
         });
 
         /* ── CHART DEFAULTS ── */

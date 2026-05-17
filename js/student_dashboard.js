@@ -19,7 +19,7 @@ updateClock(); setInterval(updateClock, 1000);
 
 /* ── AUTH + LOAD STUDENT ── */
 onAuthStateChanged(auth, async user => {
-    if (!user) { window.location.href = '/pages/index.html'; return; }
+    if (!user) { window.location.href = '/OJTrack/index.html'; return; }
 
     // Find student doc by uid field
     const { getDocs, where } = await import("https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js");
@@ -214,5 +214,5 @@ document.getElementById("cancelLogout").addEventListener("click", () => {
 });
 document.getElementById("confirmLogout").addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "/pages/index.html";
+    window.location.href = "/OJTrack/index.html";
 });

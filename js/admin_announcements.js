@@ -434,5 +434,5 @@ document.getElementById('cancelLogout')?.addEventListener("click", () => {
 });
 document.getElementById('confirmLogout')?.addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "/pages/index.html";
+    window.location.href = "/OJTrack/index.html";
 });
