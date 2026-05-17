@@ -3,11 +3,11 @@ import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/
 
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = "/OJTrack/index.html";
+        window.location.href = "index.html";
     }
 });
 
 document.getElementById("logoutBtn").addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "/OJTrack/index.html";
+    window.location.href = "index.html";
 });
