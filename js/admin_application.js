@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     onAuthStateChanged(auth, (user) => {
         if (!user) {
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
             return;
         }
         listenStudents();
@@ -183,5 +183,5 @@ document.getElementById('cancelLogout')?.addEventListener("click", () => {
     document.getElementById('logoutModal').style.display = 'none';
 });
 document.getElementById('confirmLogout')?.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "/index.html";
 });

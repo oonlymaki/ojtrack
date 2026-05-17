@@ -37,7 +37,7 @@ function formatDateMDY(dateStr) {
 
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
         return;
     }
 
@@ -60,5 +60,5 @@ onAuthStateChanged(auth, async (user) => {
 
 document.getElementById("logoutBtn").addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "index.html";
+    window.location.href = "/index.html";
 });
